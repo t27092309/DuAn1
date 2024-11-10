@@ -1,5 +1,5 @@
 <?php
-include_once "controller/ProducrController.php";
+include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
 
