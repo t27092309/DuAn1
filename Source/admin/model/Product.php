@@ -2,11 +2,12 @@
 class Product
 {
 
-    public $id;
-    public $name;
-    public $price;
-    public $image_src;
-    public $created_date;
+    public $id_product;
+    public $title_product;
+    public $price_product;
+    public $img_product;
+    public $description_product;
+    public $id_category;
 
     public function __construct()
     {
