@@ -43,8 +43,14 @@
                         <td><?= $product->description_product ?></td>
                         <td><?= $product->author_product ?></td>
                         <td><?= $product->id_category ?></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-warning">
+                                <a style="text-decoration: none; color: white;" href="?act=product-update&id=<?= $product->id_product ?>">Update</a>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <a style="text-decoration: none; color: white;" href="?act=product-delete&id=<?= $product->id_product ?>">Delete</a>
+                            </button>
+                        </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
