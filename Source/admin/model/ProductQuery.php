@@ -89,25 +89,29 @@ class ProductQuery
     }
 
     //---------------------------------------------------------Update()----------------------------------------------
-    public function update($id, Product $product)
+    public function update($id_product, Product $product)
     {
         try {
-            $sql = "";
+            $sql = "UPDATE product SET title_product = '".$product->title_product."', img_product = '".$product->img_product."', price_product = '".$product->price_product."', description_product = '".$product->description_product."', id_category = '".$product->id_category."' WHERE id_product = $id_product";
             $data = "";
         } catch (Exception $error) {
-            echo "Insert error";
+            echo "Update error";
             echo "Error: " . $error->getMessage();
             echo "<hr>";
         }
     }
     //---------------------------------------------------------Delete()----------------------------------------------
-    public function delete($id)
+    public function delete($id_product)
     {
         try {
-            $sql = "";
-            $data = "";
+            $sql = "DELETE FROM product WHERE id_product = $id_product ";
+            $data = $this->pdo->exec($sql);
+
+            if($data === 1 ){
+                return "success";
+            }
         } catch (Exception $error) {
-            echo "Insert error";
+            echo "Delete error";
             echo "Error: " . $error->getMessage();
             echo "<hr>";
         }
