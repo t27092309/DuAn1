@@ -13,7 +13,7 @@ class ProductController{
 
     public function showList(){
 
-
+        $productList = $this->productQuery->all();
         include "view/product/list.php";
     }
 

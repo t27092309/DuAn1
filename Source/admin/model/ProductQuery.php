@@ -36,6 +36,7 @@ class ProductQuery
                 $product->price_product = $value['price_product'];
                 $product->description_product = $value['description_product'];
                 $product->id_category = $value['id_category'];
+                $product->author_product = $value['author_product'];
 
                 $list[] = $product;
             }
@@ -62,6 +63,7 @@ class ProductQuery
                 $product->price_product = $data['price_product'];
                 $product->description_product = $data['description_product'];
                 $product->id_category = $data['id_category'];
+                $product->author_product = $data['author_product'];
                 return $product;
             }
         } catch (Exception $error) {
@@ -75,7 +77,7 @@ class ProductQuery
     public function insert(Product $product)
     {
         try {
-            $sql = "INSERT INTO product(title_product, img_product, price_product, description_product, id_category) VALUES('".$product->title_product."', '".$product->img_product."', '".$product->price_product."', '".$product->description_product."', '".$product->id_category."')";
+            $sql = "INSERT INTO product(title_product, img_product, price_product, description_product, id_category, author_product) VALUES('".$product->title_product."', '".$product->img_product."', '".$product->price_product."', '".$product->description_product."', '".$product->id_category."', '".$product->author_product."')";
             $data = $this->pdo->exec($sql);
 
             if($data === 1){
@@ -92,7 +94,7 @@ class ProductQuery
     public function update($id_product, Product $product)
     {
         try {
-            $sql = "UPDATE product SET title_product = '".$product->title_product."', img_product = '".$product->img_product."', price_product = '".$product->price_product."', description_product = '".$product->description_product."', id_category = '".$product->id_category."' WHERE id_product = $id_product";
+            $sql = "UPDATE product SET title_product = '".$product->title_product."', img_product = '".$product->img_product."', price_product = '".$product->price_product."', description_product = '".$product->description_product."', id_category = '".$product->id_category."', '".$product->author_product."' WHERE id_product = $id_product";
             $data = "";
         } catch (Exception $error) {
             echo "Update error";
