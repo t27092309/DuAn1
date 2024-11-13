@@ -7,8 +7,9 @@ class Product
     public $img_product;
     public $price_product;
     public $description_product;
-    public $id_category;
     public $author_product;
+    public $id_category;
+
 
     public function __construct()
     {

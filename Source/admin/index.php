@@ -3,56 +3,73 @@ include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
 
-$act = "";
-if (isset($_GET['act'])) {
-    $act = $_GET['act'];
-}
-echo "Giá trị của act là: " . $act . "<hr>";
-
 $id = "";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
+    echo "id: $id <hr/>";
 }
-echo "Giá trị id là: " . $act . "<hr>";
+$act = "";
+if (isset($_GET["act"])) {
+    $act = $_GET["act"];
+    echo "act: $act<hr/>";
 
-switch ($act) {
-    case "":
-        // Điều hướng sang trang mặc định (trang danh sách) nếu người dùng không truyền "act"
-        header("Location: ?act=product-list");
-        break;
-
-    case "product-list":
-        // Hiển thị trang danh sách và xử lý logic
-        $productCtrl = new ProductController();
-        $productCtrl->showList();
-        break;
-
-    case "product-create":
-        // Hiển thị trang tạo mới và xử lý logic
-        $productCtrl = new ProductController();
-        $productCtrl->showCreate();
-        break;
-
-    case "product-detail":
-        // Hiển thị trang chi tiết và xử lý logic
-        $productCtrl = new ProductController();
-        $productCtrl->showDetail($id);
-        break;
-
-    case "product-update":
-        // Hiển thị trang chỉnh sửa và xử lý logic
-        $productCtrl = new ProductController();
-        $productCtrl->showUpdate($id);
-        break;
-
-    case "product-delete":
-        // Hiển thị trang chỉnh sửa và xử lý logic
-        // $productCtrl = new ProductController();
-        // $productCtrl->delete($id);
-        break;
-
-    default:
-        // Hiển thị "trang 404 fage not found" nếu giá trị "act" không nằm trong danh sách phía trên.
-        include "view/404.php";
-        break;
+    switch ($act) {
+        case "":
+            header('location:index.php');
+            break;
+    
+        // case "category-list":
+        //     $categoryCtrl = new CategoryController();
+        //     $categoryCtrl->showListCategory();
+        //     break;
+    
+        // case "category-create":
+        //     $categoryCtrl = new CategoryController();
+        //     $categoryCtrl->showCreate();
+        //     break;
+        // case "category-update":
+        //     $categoryCtrl = new CategoryController();
+        //     $categoryCtrl->showUpdate($id);
+        //     break;
+    
+        // case "category-delete":
+        //     $categoryCtrl = new CategoryController();
+        //     $categoryCtrl->showDelete($id);
+        //     break;
+    
+        // case "category-detail":
+        //     $categoryCtrl = new CategoryController();
+        //     $categoryCtrl->showdetail();
+        //     break;
+    // -------------------------------------------------------------
+        case "product-list":
+            $proCtrl = new ProductController();
+            $proCtrl->showList();
+            break;
+    
+        case "product-create":
+            $proCtrl = new ProductController();
+            $proCtrl->showCreate();
+            break;
+    
+        case "product-update":
+            $proCtrl = new ProductController();
+            $proCtrl->showUpdate($id);
+            break;
+    
+        case "product-delete":
+            $proCtrl = new ProductController();
+            $proCtrl->showDelete($id);
+            break;
+    
+        case "product-detail":
+            $proCtrl = new ProductController();
+            $proCtrl->showDetail($id);
+            break;
+    
+        default:
+            include "view/404.php";
+            break;
+    }
+    
 }

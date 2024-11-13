@@ -11,21 +11,20 @@
 
 <body>
     <!-- Tiêu đề trang -->
-    <h3>Trang Danh Sách Sản Phẩm</h3>
-    <div class="list-product">
+    <div class="container">
+        <h3>Trang Danh Sách Sản Phẩm</h3>
+
         <table class="table table-striped table-bordered">
             <thead table-primary style="text-align: center;">
                 <tr>
                     <th scope="col" style="width: 10px;"></th>
                     <th scope="col" style="width: 30px;">ID</th>
                     <th scope="col" style="width: 200px;">Title</th>
-                    <th scope="col">Image</th>
-                    <th scope="col" style="width: 100px;">Price</th>
+                    <th scope="col" style="width: 200px;">Image</th>
+                    <th scope="col" style="width: 80px;">Price</th>
                     <th scope="col">Description</th>
-                    <th scope="col" style="width: 200px;">Author</th>
+                    <th scope="col" style="width: 150px;">Author</th>
                     <th scope="col" style="width: 10px;">ID Category</th>
-
-
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -36,7 +35,7 @@
                         <td><?= $product->title_product ?></td>
                         <td>
                             <div style="height: 100%; width: 100%;">
-                                <img src="<?= $product->img_product ?>" alt="">
+                                <img style="width: 100%;" src="<?= $product->img_product ?>" alt="">
                             </div>
                         </td>
                         <td><?= $product->price_product ?></td>
@@ -55,10 +54,8 @@
                 <?php endforeach ?>
             </tbody>
         </table>
+        <!-- Khu vực điều hướng -->
+        <button type="button" class="btn btn-success">
+            <a href="?act=product-create" style="color: white; text-decoration: none;">Trang tạo mới</a>
+        </button>
     </div>
-
-
-    <!-- Khu vực điều hướng -->
-    <button type="button" class="btn btn-success">
-        <a href="?act=product-create" style="color: white; text-decoration: none;">Trang tạo mới</a>
-    </button>
