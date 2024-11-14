@@ -94,8 +94,12 @@ class ProductQuery
     public function update($id_product, Product $product)
     {
         try {
-            $sql = "UPDATE product SET title_product = '".$product->title_product."', img_product = '".$product->img_product."', price_product = '".$product->price_product."', description_product = '".$product->description_product."', id_category = '".$product->id_category."', '".$product->author_product."' WHERE id_product = $id_product";
-            $data = "";
+            $sql = "UPDATE product SET title_product = '".$product->title_product."', img_product = '".$product->img_product."', price_product = '".$product->price_product."', description_product = '".$product->description_product."', id_category = '".$product->id_category."', author_product = '".$product->author_product."' WHERE id_product = $id_product";
+            $data = $this->pdo->exec($sql);
+
+            if($data === 1 || $data === 0){
+                return "success";
+            }
         } catch (Exception $error) {
             echo "Update error";
             echo "Error: " . $error->getMessage();

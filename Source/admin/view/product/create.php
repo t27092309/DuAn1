@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <!-- Tiêu đề trang -->
     <div class="container">
         <h3>Trang Tạo Mới Sản Phẩm</h3>
         <form action="" method="post" enctype="multipart/form-data">

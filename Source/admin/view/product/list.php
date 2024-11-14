@@ -43,10 +43,10 @@
                         <td><?= $product->author_product ?></td>
                         <td><?= $product->id_category ?></td>
                         <td>
-                            <button type="button" class="btn btn-warning">
+                            <button type="button" class="btn btn-warning mb-1" style="width: 80px;">
                                 <a style="text-decoration: none; color: white;" href="?act=product-update&id=<?= $product->id_product ?>">Update</a>
                             </button>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger mb-1" style="width: 80px;">
                                 <a style="text-decoration: none; color: white;" href="?act=product-delete&id=<?= $product->id_product ?>">Delete</a>
                             </button>
                         </td>
