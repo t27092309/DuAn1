@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ảnh img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Menu */
+.menu {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+.menu img {
+    height: 40px;
+}
+
+.parent {
+    position: relative;
+    flex-grow: 1;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background-image: url("/img/search-icon.png");
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu img:not(:first-child) {
+    margin-left: auto;
+}
+
+/* Banner */
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Flash Sale Title */
+.flash-sale-countdown {
+    text-align: center;
+    padding: 50px;
+    background-color: #ff8c8c;
+    color: #fff;
+    border-radius: 10px;
+    /* Rounded corners */
+    border: 2px solid #ff5f5f;
+    /* Border around the box */
+}
+
+.flash-sale-countdown h1 {
+    font-size: 48px;
+    color: #fff;
+    /* Flash Sale text color */
+    margin-bottom: 20px;
+}
+
+.flash-sale-countdown p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+#countdown-timer {
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+    /* Timer in black */
+}
+
+.flash-sale-countdown .sale-times {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.flash-sale-countdown .sale-time {
+    text-align: center;
+}
+
+.flash-sale-countdown .sale-time span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5f5f;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    /* Rounded corners for each time */
+    border: 1px solid #ff5f5f;
+}
+
+.flash-sale-countdown .sale-time p.status {
+    font-size: 16px;
+    color: #fff;
+    /* "Đang bán" in white */
+    margin-top: 5px;
+}
+
+.flash-sale-countdown .sale-time:hover span {
+    background-color: #ff5f5f;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.category {
+    text-align: center;
+    width: 80px;
+}
+
+.category img {
+    width: 50px;
+    height: 50px;
+}
+
+.category p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Product List */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 50px;
+    justify-items: center;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product-name {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.price {
+    color: #ff5f5f;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ff5f5f;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #e04e4e;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+}
+
+.footer-section {
+    text-align: center;
+    width: 30%;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    width: 40px;
+    height: 40px;
+}
