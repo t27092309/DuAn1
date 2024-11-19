@@ -25,20 +25,20 @@
    </div>
       <?php include "view/boxright.php"; ?>
 </main>
-<!-- BANNER 2 -->
 
 
 
-<!-- css -->
+
+
  <style>
-  /* Đặt style cho phần bên trái chứa form đăng ký */
+  
 .boxleft {
-  width: 400px; /* Chiều rộng cố định cho form */
+  width: 400px; 
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 0 auto; /* Đặt form vào giữa theo chiều ngang */
+  margin: 0 auto; 
 }
 
 /* Style cho tiêu đề của form */
@@ -50,9 +50,9 @@
   text-align: center;
 }
 
-/* Style cho nội dung form */
+
 .box_content {
-  text-align: center; /* Căn giữa nội dung bên trong form */
+  text-align: center; 
 }
 
 /* Style cho các nhãn và input */
