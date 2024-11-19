@@ -20,6 +20,33 @@ class ProductQuery
     {
         $this->pdo = null;
     }
+    //---------------------------------------------------------Home()-----------------------------------------------
+    public function home()
+    {
+        try {
+            $sql = "SELECT * FROM product ORDER BY id DESC LIMIT 0,15";
+            $data = $this->pdo->query($sql)->fetchAll();
+
+            foreach ($data as $value) {
+                $product = new Product();
+                $product->id_product = $value['id_product'];
+                $product->title_product = $value['title_product'];
+                $product->img_product = $value['img_product'];
+                $product->price_product = $value['price_product'];
+                $product->description_product = $value['description_product'];
+                $product->id_category = $value['id_category'];
+                $product->author_product = $value['author_product'];
+
+                $list[] = $product;
+            }
+            return $list;
+        } catch (Exception $error) {
+            echo "Get all product error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
+
 
     //---------------------------------------------------------All()----------------------------------------------
     public function all()

@@ -5,6 +5,8 @@ include_once "model/ProductQuery.php";
 
 include "header.php";
 
+include "footer.php";
+
 
 $id = "";
 if (isset($_GET['id'])) {
@@ -69,6 +71,11 @@ if (isset($_GET["act"])) {
             $proCtrl = new ProductController();
             $proCtrl->showDetail($id);
             break;
+
+        case "home":
+            $proCtrl = new ProductController();
+            $proCtrl->homeShowList();
+            break;
     
         default:
             include "view/404.php";
@@ -76,4 +83,3 @@ if (isset($_GET["act"])) {
     }
     
 }
-include "footer.php";

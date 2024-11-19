@@ -21,7 +21,7 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="?act=home">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
                     <li><a href="#">Đồ chơi</a></li>
