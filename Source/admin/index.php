@@ -3,6 +3,9 @@ include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
 
+include "header.php";
+
+
 $id = "";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -73,3 +76,4 @@ if (isset($_GET["act"])) {
     }
     
 }
+include "footer.php";

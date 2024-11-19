@@ -7,8 +7,8 @@ class ProductQuery
     {
         try {
             $this->pdo = new PDO("mysql:host=localhost; port=3306; dbname=duan1", "root", "");
-            echo "Connect database successfully";
-            echo "<hr>";
+            // echo "Connect database successfully";
+            // echo "<hr>";
         } catch (Exception $error) {
             echo "Connect database failed";
             echo "Error: " . $error->getMessage();
