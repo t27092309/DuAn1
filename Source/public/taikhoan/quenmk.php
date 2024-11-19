@@ -34,7 +34,7 @@
             
          </div>
     <?php
-        include_once "view/boxright.php";
+        // include_once "view/boxright.php";
         
     ?>
          
