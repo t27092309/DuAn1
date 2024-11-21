@@ -7,16 +7,15 @@ include_once "admin/model/ProductQuery.php";
 include_once "admin/controller/ProductController.php";
 // include "global.php";
 
-include "./admin/header.php";
+include "./public/Layout/header.php";
 
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case "":
-            // $proCtrl = new ProductController();
-            // $proCtrl->homeShowList();
-            // break;
+            header('location:index.php');
+            break;
         // case "lien-he":
         //     $proCtrl = new ProductController();
         //     $proCtrl->homeLienHe();

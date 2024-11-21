@@ -5,7 +5,7 @@ include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
 
-include "header.php";
+include "./header.php";
 
 include "footer.php";
 
