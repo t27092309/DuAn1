@@ -1,5 +1,25 @@
 <?php
+class ProductQuery{
+public $pdo;
 
+public function __construct()
+{
+    try {
+        $this->pdo = new PDO("mysql:host=localhost; port=3306; dbname=duan1", "root", "");
+        // echo "Connect database successfully";
+        // echo "<hr>";
+    } catch (Exception $error) {
+        echo "Connect database failed";
+        echo "Error: " . $error->getMessage();
+        echo "<hr>";
+    }
+}
+
+public function __destruct()
+{
+    $this->pdo = null;
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +29,38 @@
     <title>Document</title>
     <link rel="stylesheet" href="./sty.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./public/Layout/styles.css">
 </head>
 <body>
-    <header></header>
-    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">FAHASA</a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="?act=home">Trang chủ</a></li>
+                    <li><a href="#">Sách</a></li>
+                    <li><a href="#">Văn phòng phẩm</a></li>
+                    <li><a href="#">Đồ chơi</a></li>
+                    <li><a href="#">Khuyến mãi</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                <button>Tìm kiếm</button>
+            </div>
+            <div class="header-actions">
+
+                <a href="admin/?act=product-list" class="account">
+                    <i class="fas fa-user"></i> Tài khoản
+                </a>
+                <a href="#" class="cart">
+                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                </a>
+            </div>
+        </div>
+    </header>
     <main>
         <div class="list">
             <form action="filter.php" method="GET">
