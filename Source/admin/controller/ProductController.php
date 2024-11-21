@@ -111,10 +111,22 @@ class ProductController
 
         include "view/product/update.php";
     }
-    public function showDelete()
+    public function showDelete($id_product)
     {
+        if ($id_product !== "") {
+            $productDelete = $this->productQuery->delete($id_product);
 
+            if ($productDelete == "success") {
+                header('location:?act=product-list');
+            } else {
+                echo "Delete error";
+            }
+        } else {
+            echo "<h1> Lỗi: Tham số id trống. Mời bạn kiểm tra tham số id trên đường dẫn url. </h1>";
+        }
 
-        include "view/product/delete.php";
+        include "view/product/create.php";
     }
+
+    
 }
