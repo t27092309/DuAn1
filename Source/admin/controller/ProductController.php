@@ -115,6 +115,6 @@ class ProductController
     {
 
 
-        include "view/product/update.php";
+        include "view/product/delete.php";
     }
 }
