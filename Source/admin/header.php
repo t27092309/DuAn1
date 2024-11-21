@@ -21,7 +21,7 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="index.php">Trang chủ</a></li>
+                    <li><a href="../index.php">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
                     <li><a href="#">Đồ chơi</a></li>
@@ -34,7 +34,7 @@
             </div>
             <div class="header-actions">
 
-                <a href="admin/?act=product-list" class="account">
+                <a href="?act=product-list" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">

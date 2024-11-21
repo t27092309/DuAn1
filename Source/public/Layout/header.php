@@ -34,7 +34,7 @@
             </div>
             <div class="header-actions">
 
-                <a href="admin/?act=product-list" class="account">
+                <a href="index.php?act=product-list" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">
