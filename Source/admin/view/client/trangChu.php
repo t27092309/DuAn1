@@ -30,11 +30,11 @@
                 </div>
                 <div class="category-item">
                     <img src="https://via.placeholder.com/200x200" alt="Category 2">
-                    <p>Văn Phòng Phẩm</p>
+                    <p>HOT Trend</p>
                 </div>
                 <div class="category-item">
                     <img src="https://via.placeholder.com/200x200" alt="Category 3">
-                    <p>Đồ Chơi</p>
+                    <p>SALE</p>
                 </div>
                 <div class="category-item">
                     <img src="https://via.placeholder.com/200x200" alt="Category 4">
