@@ -47,7 +47,7 @@
                                 <a style="text-decoration: none; color: white;" href="?act=product-update&id=<?= $product->id_product ?>">Update</a>
                             </button>
                             <button type="button" class="btn btn-danger mb-1" style="width: 80px;">
-                                <a style="text-decoration: none; color: white;" href="?act=product-delete&id=<?= $product->id_product ?>">Delete</a>
+                                <a style="text-decoration: none; color: white;" href="?act=product-delete&id=<?= $product->id_product ?>" onclick="return confirm('Xóa nhá?????')">Delete</a>
                             </button>
                         </td>
                     </tr>
