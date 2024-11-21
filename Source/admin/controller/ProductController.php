@@ -89,7 +89,7 @@ class ProductController
                     $tbLoi = "Tiêu đề và giá không được bỏ trống";
                 }
 
-                var_dump($_FILES);
+                // var_dump($_FILES);
                 $thamSo1 = $_FILES['file_upload']['tmp_name'];
                 $thamSo2 = "../IMG/" . $_FILES['file_upload']['name'];
                 if (move_uploaded_file($thamSo1, $thamSo2)) {
@@ -111,10 +111,22 @@ class ProductController
 
         include "view/product/update.php";
     }
-    public function showDelete()
+    public function showDelete($id_product)
     {
+        if ($id_product !== "") {
+            $productDelete = $this->productQuery->delete($id_product);
 
+            if ($productDelete == "success") {
+                header('location:?act=product-list');
+            } else {
+                echo "Delete error";
+            }
+        } else {
+            echo "<h1> Lỗi: Tham số id trống. Mời bạn kiểm tra tham số id trên đường dẫn url. </h1>";
+        }
 
-        include "view/product/update.php";
+        include "view/product/create.php";
     }
+
+    
 }

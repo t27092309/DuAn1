@@ -191,12 +191,15 @@ body {
 }
 
 .category-list {
-    display: grid;
+    display: flex;
+    justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .category-item {
+    width: 200px;
+    height: 250px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
