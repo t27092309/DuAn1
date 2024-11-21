@@ -9,6 +9,11 @@ class ProductController
     }
     public function __destruct() {}
 
+    public function homeShowList(){
+        $homeProductList = $this->productQuery->all();
+        include "admin/view/client/trangChu.php";
+    }
+
     public function showList()
     {
 

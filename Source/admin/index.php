@@ -1,7 +1,14 @@
 <?php
+define("SITE_URL","http://localhost/DuAn1/Source");
+
 include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
+
+include "header.php";
+
+include "footer.php";
+
 
 $id = "";
 if (isset($_GET['id'])) {
@@ -65,6 +72,11 @@ if (isset($_GET["act"])) {
         case "product-detail":
             $proCtrl = new ProductController();
             $proCtrl->showDetail($id);
+            break;
+
+        case "home":
+            $proCtrl = new ProductController();
+            $proCtrl->homeShowList();
             break;
     
         default:

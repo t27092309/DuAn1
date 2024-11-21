@@ -133,6 +133,9 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.mr{
+    margin-right: 10px;
+}
 
 .product-item:hover {
     transform: scale(1.05);
