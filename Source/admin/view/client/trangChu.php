@@ -5,14 +5,14 @@
             <div class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide"><img style="width: 100%;" src="/Source/IMG/Banner_1.webp" alt="">
+                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_1.webp" alt="">
                         </li>
-                        <li class="splide__slide"><img style="width: 100%;" src="/Source/IMG/Banner_2.webp" alt="">
+                        <!-- <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_2.webp" alt="">
                         </li>
-                        <li class="splide__slide"><img style="width: 100%;" src="/Source/IMG/Banner_3.webp" alt="">
+                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_3.webp" alt="">
                         </li>
-                        <li class="splide__slide"><img style="width: 100%;" src="/Source/IMG/Banner_4.webp" alt="">
-                        </li>
+                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_4.webp" alt="">
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -49,37 +49,17 @@
         <div class="container">
             <h2>Sản phẩm nổi bật</h2>
             <div class="product-list">
+                <?php 
+                foreach($homeProductList as $product):
+                ?>
                 <!-- Product Item -->
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/200x250" alt="Product 1">
-                    <h3>Sách Kỹ Năng</h3>
-                    <p class="price">150,000 VNĐ</p>
+                    <img src="..<?php $product->img_product ?>" alt="Product 1">
+                    <h3><?= $product->title_product ?></h3>
+                    <p class="price"><?= $product->price_product ?></p>
                     <button>Mua ngay</button>
                 </div>
-                <div class="product-item">
-                    <img src="https://via.placeholder.com/200x250" alt="Product 2">
-                    <h3>Bút Màu</h3>
-                    <p class="price">50,000 VNĐ</p>
-                    <button>Mua ngay</button>
-                </div>
-                <div class="product-item">
-                    <img src="https://via.placeholder.com/200x250" alt="Product 3">
-                    <h3>Đồ Chơi Trẻ Em</h3>
-                    <p class="price">200,000 VNĐ</p>
-                    <button>Mua ngay</button>
-                </div>
-                <div class="product-item">
-                    <img src="https://via.placeholder.com/200x250" alt="Product 4">
-                    <h3>Vở Học Sinh</h3>
-                    <p class="price">20,000 VNĐ</p>
-                    <button>Mua ngay</button>
-                </div>
-                <div class="product-item">
-                    <img src="https://via.placeholder.com/200x250" alt="Product 4">
-                    <h3>Vở Học Sinh</h3>
-                    <p class="price">20,000 VNĐ</p>
-                    <button>Mua ngay</button>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </section>
@@ -189,7 +169,8 @@
         </div>
     </footer>
 </main>
-<script src="/node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+
+<script src="/node_modules/@splidejs/splide/dist/js/splide.min.js" type="text/Javascript"></script>
 <script type="text/javascript">
     var splide = new Splide('.splide', {
         type: 'loop',

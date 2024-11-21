@@ -11,7 +11,7 @@ class ProductController
 
     public function homeShowList(){
         $homeProductList = $this->productQuery->all();
-        include "view/client/trangChu.php";
+        include "admin/view/client/trangChu.php";
     }
 
     public function showList()

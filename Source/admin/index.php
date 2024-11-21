@@ -1,4 +1,6 @@
 <?php
+define("SITE_URL","http://localhost/DuAn1/Source");
+
 include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
