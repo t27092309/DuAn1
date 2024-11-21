@@ -35,7 +35,7 @@
                         <td><?= $product->title_product ?></td>
                         <td>
                             <div style="height: 100%; width: 100%;">
-                                <img style="width: 100%;" src="<?= $product->img_product ?>" alt="">
+                                <img style="width: 100%;" src="/DuAn1<?= $product->img_product ?>" alt="">
                             </div>
                         </td>
                         <td><?= $product->price_product ?></td>

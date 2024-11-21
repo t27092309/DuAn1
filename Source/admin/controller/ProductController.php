@@ -89,7 +89,7 @@ class ProductController
                     $tbLoi = "Tiêu đề và giá không được bỏ trống";
                 }
 
-                var_dump($_FILES);
+                // var_dump($_FILES);
                 $thamSo1 = $_FILES['file_upload']['tmp_name'];
                 $thamSo2 = "../IMG/" . $_FILES['file_upload']['name'];
                 if (move_uploaded_file($thamSo1, $thamSo2)) {
