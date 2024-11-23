@@ -79,6 +79,25 @@
                     </div>
                 </div>
             </div>
+            <!-- Tổng tiền -->
+        <div class="total-section">
+            <strong>Tổng cộng: <span id="cart-total">0</span> đ</strong>
+        </div>
+
+        <!-- Form thêm sản phẩm -->
+        <form id="add-product-form" method="POST">
+            <h2>Thêm sản phẩm mới</h2>
+            <label>
+                Tên sản phẩm: 
+                <input type="text" name="name" required>
+            </label>
+            <label>
+                Giá: 
+                <input type="number" name="price" min="1000" required>
+            </label>
+            <button type="submit">Thêm sản phẩm</button>
+        </form>
+    </div>
 
             <!-- Right Section: Discount, Shipping, Total, Checkout -->
             <div class="right-section">
