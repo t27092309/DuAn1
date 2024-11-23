@@ -57,6 +57,8 @@ if (isset($_GET['remove_id'])) {
         <?php endforeach; ?>
         <button type="submit" name="update_cart">Cập nhật giỏ hàng</button>
     </form>
+    <a href="bill.php">Tiến hành thanh toán</a>
+
 </body>
 
 </html>

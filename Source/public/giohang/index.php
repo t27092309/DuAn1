@@ -239,5 +239,32 @@ $products = $pdo->query("SELECT * FROM product")->fetchAll(PDO::FETCH_ASSOC);
             </form>
         </div>
     <?php endforeach; ?>
+    <a href="cart.php">Xem giỏ hàng</a>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+</head>
+<body>
+
+    <!-- Header (Navigation bar) -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="cart.php">Giỏ hàng</a></li>
+                <li><a href="bill.php">Thanh toán</a></li>
+                <li><a href="users.php">Thông tin người dùng</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Sản phẩm</h1>
+    <!-- Hiển thị sản phẩm ở đây -->
+</body>
+</html>
+

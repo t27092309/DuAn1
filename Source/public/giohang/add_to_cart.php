@@ -40,4 +40,8 @@ if (isset($_POST['add_to_cart'])) {
     header("Location: cart.php");
     exit;
 }
+header("Location: cart.php");  // Chuyển đến giỏ hàng
+// Hoặc
+header("Location: index.php");  // Quay lại trang sản phẩm
+
 ?>
