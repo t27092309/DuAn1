@@ -3,6 +3,38 @@ session_start();
 
 // Khởi tạo giỏ hàng
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+
+// Thêm sản phẩm vào giỏ hàng
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_product'])) {
+    $product_name = $_POST['name'];
+    $product_price = $_POST['price'];
+    $product_quantity = 1;  // Mặc định là 1 sản phẩm
+
+    // Thêm sản phẩm mới vào giỏ hàng
+    $cart[] = [
+        'name' => $product_name,
+        'price' => $product_price,
+        'quantity' => $product_quantity
+    ];
+
+    // Lưu lại giỏ hàng vào session
+    $_SESSION['cart'] = $cart;
+}
+
+// Cập nhật giỏ hàng (sửa số lượng sản phẩm)
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_cart'])) {
+    foreach ($_POST['quantity'] as $index => $quantity) {
+        $cart[$index]['quantity'] = $quantity;
+    }
+    $_SESSION['cart'] = $cart;
+}
+
+// Xóa sản phẩm khỏi giỏ hàng
+if (isset($_GET['remove'])) {
+    $remove_index = $_GET['remove'];
+    unset($cart[$remove_index]); // Xóa sản phẩm theo index
+    $_SESSION['cart'] = array_values($cart); // Sắp xếp lại mảng sau khi xóa
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,46 +75,53 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                 <div class="cart">
                     <h2>Giỏ Hàng</h2>
                     <div class="cart-header">
-                        <label><input type="checkbox" id="select-all"> Chọn tất cả (<?= count($cart) ?> sản phẩm)</label>
+                        <label><input type="checkbox" id="select-all"> Chọn tất cả (<?= count($cart) ?> sản
+                            phẩm)</label>
                         <span class="quantity-header">Số lượng</span>
                         <span>Thành tiền</span>
                     </div>
 
                     <!-- Product Items -->
-                    <?php foreach ($cart as $item): ?>
-                        <div class="cart-item">
-                            <input type="checkbox" class="item-checkbox">
-                            <div class="product-details">
-                                <p><?= htmlspecialchars($item['name']) ?></p>
-                                <span class="item-price"><?= number_format($item['price']) ?></span> đ
+                    <form method="POST">
+                        <?php foreach ($cart as $index => $item): ?>
+                            <div class="cart-item">
+                                <input type="checkbox" class="item-checkbox">
+                                <div class="product-details">
+                                    <p><?= htmlspecialchars($item['name']) ?></p>
+                                    <span class="item-price"><?= number_format($item['price']) ?></span> đ
+                                </div>
+                                <div class="quantity">
+                                    <input type="number" class="item-quantity" name="quantity[<?= $index ?>]"
+                                        value="<?= $item['quantity'] ?>" min="1">
+                                </div>
+                                <span class="total-price"><?= number_format($item['price'] * $item['quantity']) ?> đ</span>
+                                <a href="?remove=<?= $index ?>" class="remove">🗑️</a>
                             </div>
-                            <div class="quantity">
-                                <input type="number" class="item-quantity" value="<?= $item['quantity'] ?>" min="1">
-                            </div>
-                            <span class="total-price"><?= number_format($item['price'] * $item['quantity']) ?> đ</span>
-                            <button class="remove">🗑️</button>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                        <button type="submit" name="update_cart">Cập nhật giỏ hàng</button>
+                    </form>
                 </div>
             </div>
 
             <!-- Tổng tiền -->
             <div class="total-section">
-                <strong>Tổng cộng: <span id="cart-total">0</span> đ</strong>
+                <strong>Tổng cộng: <span id="cart-total"><?= number_format(array_reduce($cart, function ($sum, $item) {
+                    return $sum + ($item['price'] * $item['quantity']);
+                }, 0)) ?> đ</span></strong>
             </div>
 
             <!-- Form thêm sản phẩm -->
             <form id="add-product-form" method="POST">
                 <h2>Thêm sản phẩm mới</h2>
                 <label>
-                    Tên sản phẩm: 
+                    Tên sản phẩm:
                     <input type="text" name="name" required>
                 </label>
                 <label>
-                    Giá: 
+                    Giá:
                     <input type="number" name="price" min="1000" required>
                 </label>
-                <button type="submit">Thêm sản phẩm</button>
+                <button type="submit" name="add_product">Thêm sản phẩm</button>
             </form>
 
             <!-- Right Section -->
@@ -110,11 +149,15 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                 <div class="total-section">
                     <div class="total-row">
                         <span>Thành tiền:</span>
-                        <span id="subtotal">0 đ</span>
+                        <span id="subtotal"><?= number_format(array_reduce($cart, function ($sum, $item) {
+                            return $sum + ($item['price'] * $item['quantity']);
+                        }, 0)) ?> đ</span>
                     </div>
                     <div class="total-row">
                         <span>Tổng số tiền (gồm VAT):</span>
-                        <span id="total">0 đ</span>
+                        <span id="total"><?= number_format(array_reduce($cart, function ($sum, $item) {
+                            return $sum + ($item['price'] * $item['quantity']);
+                        }, 0)) ?> đ</span>
                     </div>
                 </div>
 
