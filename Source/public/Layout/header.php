@@ -30,7 +30,7 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="./public/Layout/search.html">Tìm kiếm</a></button>
+                <button> <a href="">Tìm kiếm</a></button>
             </div>
             <div class="header-actions">
 
