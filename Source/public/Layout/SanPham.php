@@ -1,12 +1,10 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./sty.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Angelina Cosmetics</title>
+    <link rel="stylesheet" href="sanpham.css">
 </head>
 <body>
     <header class="header">
@@ -25,7 +23,7 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button>Tìm kiếm</button>
+                <button> <a href="./search.php">Tìm kiếm</a></button>
             </div>
             <div class="header-actions">
 
@@ -38,181 +36,138 @@
             </div>
         </div>
     </header>
+
     <main>
-        <div class="list">
-            <form action="filter.php" method="GET">
+        <div class="container">
+            <section class="pro">
+                <div class="product">
+                    <div class="poster">
+                        <img src="./Image/459585503-547035301107882-3644353517869357068-n-8192.png" alt="Product Image">
+                    </div>
+                    <div class="chosse">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="click">
+                        <div class="them">Thêm vào giỏ hàng</div>
+                        <div class="buy">Mua ngay</div>
+                    </div>
+                    <p class="p">Chính sách ưu đãi của Fahasa</p>
+                    <div class="Ch">
+                        <p>Giao hàng nhanh</p>
+                        <p>Đổi trả miễn phí toàn quốc</p>
+                        <p>Ưu đãi khi mua số lượng lớn</p>
+                    </div>
+                </div>
 
-            <div class="h1">
-                <h1>Chọn phân loại sách </h1>
-            </div>
-            <div class="listbook">
-                <h2>Tất cả nhóm sản phẩm :</h2>
-                <nav>
-                    <ul style="list-style: none;">
-                        <li>Tiểu thuyết</li> <br>
-                        <li>Light Novel</li> <br>
-                        <li>Truyện ngắn</li> <br>
-                        <li>Truyện trinh thám</li> <br>
-                        <li>Kiếm hiệp</li><br>
-                        <li>Tiểu thuyết</li><br>
-                        <li>Truyện ngắn</li><br>
-                        <li>Light Novel</li><br>
-                        <li>Cuoc song</li><br>
-                    </ul>
-                </nav>
+                <div class="product2">
+                    <div class="detail">
+                        <h1 class="h1">Hoa Học Trò - Số 1442</h1>
+                        <div class="di">
+                            <div class="bulletin">
+                                Nhà cung cấp: BÁO TIỀN PHONG <br>
+                                Nhà xuất bản: Báo Sinh Viên VN - Hoa Học Trò
+                            </div>
+                            <div class="bulletin">
+                                Tác giả: Nhiều Tác Giả <br>
+                                Hình thức bìa: Bìa Mềm
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detaila">
+                        <div class="product-description">
+                            <h2>Mô tả sản phẩm chi tiết</h2>
+                            <p>Đây là phần mô tả chi tiết về sản phẩm. Bạn có thể thêm thông tin chi tiết về đặc điểm, tính năng, và công dụng của sản phẩm tại đây.</p>
+                            <a href="#" class="read-more">Xem thêm</a>
+                        </div>
+                    </div>
+                    <div class="detailb">
+                        <section class="shipping-info">
+                            <h2>Thông tin vận chuyển</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Vùng</th>
+                                        <th>Thời gian giao hàng</th>
+                                        <th>Phí vận chuyển</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Hà Nội</td>
+                                        <td>2-3 ngày</td>
+                                        <td>Miễn phí</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TP.HCM</td>
+                                        <td>2-3 ngày</td>
+                                        <td>Miễn phí</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Các tỉnh khác</td>
+                                        <td>3-5 ngày</td>
+                                        <td>30.000 đ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        
+                    </div>
+                    
+                </div>
                 
-            </div>
-            <div class="price">
-                <h2>Tuỳ chọn giá :</h2>
-                <nav>
-                    <ul style="list-style: none;">
-                        <li><label><input type="checkbox"> 0đ - 150,000đ (61,401)</label></li>
-                        <li><label><input type="checkbox"> 150,000đ - 300,000đ (13,507)</label></li>
-                        <li><label><input type="checkbox"> 300,000đ - 500,000đ (4,300)</label></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="Author">
-                <h2>Nhà xuất bản :</h2>
-                <nav>
-                    <ul style="list-style: none;">
-                        <li>Kim Đồng</li> <br>
-                        <li>Nhã Nam</li> <br>
-                        <li>Minh Thắng</li> <br>
-                        <li>Đông A</li> <br>
-                        <li>Đinh Tị</li><br>
-                    </ul>
-                </nav>
-            </div>
-            <div class="Language">
-                <h2>Language :</h2>
-                <nav>
-                    <ul style="list-style: none;">
-                        <li>Tiếng Việt</li> <br>
-                        <li>Tiếng Anh</li> <br>
-                        <li>Tiếng Đức</li> <br>
-                    </ul>
-                </nav>
-            </div>
-            <div class="type">
-                <h2>Loại sách :</h2>
-                <nav>
-                    <ul style="list-style: none;">
-                        <li>Bìa cứng</li> <br>
-                        <li>Bìa mềm</li> <br>
-                    </ul>
-                </nav>
-            </div>
-            </form>
-        </div>
-        <div class="products">
-            <div class="dea">
-                <div class="box1">
-                    Sắp xếp theo:
-                </div>
-                <div class="box">
-                    Phù hợp
-                </div>
-                <div class="box">
-                    Bán chạy
-                </div>
-                <div class="box">
-                    Yêu thích
-                </div>
-            </div>
+                
+            </section>
 
-            <div class="SP">
-                <div class="SP1">
+            <section class="product-description">
+                <h2>Mô tả sản phẩm</h2>
+                <p>Ảnh bìa: Nhà Xưởng Rồng trong ATVNCG.<br>
+                Chào tháng 10 cùng những điều đặc biệt - ly - vui, teen đã sẵn sàng đón một tháng mới với loạt thông tin thú vị trên Hoa Học Trò 1442 chưa?</p>
+                <a href="#" class="read-more">Xem thêm</a>
+            </section>
+
+            <section class="fahasa-recommendations">
+                <h2>FAHASA GIỚI THIỆU</h2>
+                <div class="recommendations-grid">
+                    <div class="product-card">
+                        <img src="./Image/recommend-1.png" alt="Product 1">
+                        <h3>Hoa Học Trò - Số...</h3>
+                        <p class="price"><span>19,000 đ</span> <del>20,000 đ</del></p>
+                    </div>
+                    <div class="product-card">
+                        <img src="./Image/recommend-2.png" alt="Product 2">
+                        <h3>Hoa Học Trò - Số...</h3>
+                        <p class="price"><span>19,000 đ</span> <del>20,000 đ</del></p>
+                    </div>
+                    <div class="product-card">
+                        <img src="./Image/recommend-3.png" alt="Product 3">
+                        <h3>Hoa Học Trò - Số...</h3>
+                        <p class="price"><span>19,000 đ</span> <del>20,000 đ</del></p>
+                    </div>
+                    <div class="product-card">
+                        <img src="./Image/recommend-4.png" alt="Product 4">
+                        <h3>Hoa Học Trò - Số...</h3>
+                        <p class="price"><span>19,000 đ</span> <del>20,000 đ</del></p>
+                    </div>
                 </div>
-                <div class="SP1">                                      
+            </section>
+
+            <section class="product-reviews">
+                <h2>Đánh giá sản phẩm</h2>
+                <div class="rating-overview">
+                    <div class="rating-score">
+                        <h3>4,5/5</h3>
+                        <div class="stars">★★★★☆</div>
+                        <p>(30 đánh giá)</p>
+                    </div>
                 </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
+                <textarea placeholder="Viết đánh giá của bạn..."></textarea>
+                <button class="submit-review">Gửi đánh giá</button>
+            </section>
         </div>
     </main>
+
     <footer>
         <footer style="background-color: #f8f9fa; padding: 20px; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 20px 10px;">
