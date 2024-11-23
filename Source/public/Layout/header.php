@@ -17,11 +17,11 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="#">FAHASA</a>
+                <a href="index.php">FAHASA</a>
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="?act=home">Trang chủ</a></li>
+                    <li><a href="index.php">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
                     <li><a href="#">Đồ chơi</a></li>
@@ -30,15 +30,18 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="./public/Layout/search.html">Tìm kiếm</a></button>
+                <button> <a href="">Tìm kiếm</a></button>
             </div>
             <div class="header-actions">
 
-                <a href="admin/?act=product-list" class="account">
+                <a href="#" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                </a>
+                <a href="admin/?act=product-list">
+                    <i></i>a
                 </a>
             </div>
         </div>

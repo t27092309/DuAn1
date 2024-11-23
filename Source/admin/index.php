@@ -1,5 +1,5 @@
 <?php
-define("SITE_URL","http://localhost/DuAn1/Source");
+define("SITE_URL", "http://localhost/DuAn1/Source");
 
 include_once "controller/ProductController.php";
 include_once "model/Product.php";
@@ -24,51 +24,51 @@ if (isset($_GET["act"])) {
         case "":
             header('location:index.php');
             break;
-    
-        // case "category-list":
-        //     $categoryCtrl = new CategoryController();
-        //     $categoryCtrl->showListCategory();
-        //     break;
-    
-        // case "category-create":
-        //     $categoryCtrl = new CategoryController();
-        //     $categoryCtrl->showCreate();
-        //     break;
-        // case "category-update":
-        //     $categoryCtrl = new CategoryController();
-        //     $categoryCtrl->showUpdate($id);
-        //     break;
-    
-        // case "category-delete":
-        //     $categoryCtrl = new CategoryController();
-        //     $categoryCtrl->showDelete($id);
-        //     break;
-    
-        // case "category-detail":
-        //     $categoryCtrl = new CategoryController();
-        //     $categoryCtrl->showdetail();
-        //     break;
-    // -------------------------------------------------------------
+
+            // case "category-list":
+            //     $categoryCtrl = new CategoryController();
+            //     $categoryCtrl->showListCategory();
+            //     break;
+
+            // case "category-create":
+            //     $categoryCtrl = new CategoryController();
+            //     $categoryCtrl->showCreate();
+            //     break;
+            // case "category-update":
+            //     $categoryCtrl = new CategoryController();
+            //     $categoryCtrl->showUpdate($id);
+            //     break;
+
+            // case "category-delete":
+            //     $categoryCtrl = new CategoryController();
+            //     $categoryCtrl->showDelete($id);
+            //     break;
+
+            // case "category-detail":
+            //     $categoryCtrl = new CategoryController();
+            //     $categoryCtrl->showdetail();
+            //     break;
+            // -------------------------------------------------------------
         case "product-list":
             $proCtrl = new ProductController();
             $proCtrl->showList();
             break;
-    
+
         case "product-create":
             $proCtrl = new ProductController();
             $proCtrl->showCreate();
             break;
-    
+
         case "product-update":
             $proCtrl = new ProductController();
             $proCtrl->showUpdate($id);
             break;
-    
+
         case "product-delete":
             $proCtrl = new ProductController();
             $proCtrl->showDelete($id);
             break;
-    
+
         case "product-detail":
             $proCtrl = new ProductController();
             $proCtrl->showDetail($id);
@@ -78,10 +78,13 @@ if (isset($_GET["act"])) {
             $proCtrl = new ProductController();
             $proCtrl->homeShowList();
             break;
-    
+        // case "search":
+        //     $proCtrl = new ProductController();
+        //     $proCtrl->search();
+        //     break;
+
         default:
             include "view/404.php";
             break;
     }
-    
 }

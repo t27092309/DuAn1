@@ -34,11 +34,14 @@
             </div>
             <div class="header-actions">
 
-                <a href="?act=product-list" class="account">
+                <a href="#" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                </a>
+                <a href="?act=product-list">
+                    <i></i>a
                 </a>
             </div>
         </div>
