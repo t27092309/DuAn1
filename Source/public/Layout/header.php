@@ -30,7 +30,7 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="../admin/">Tìm kiếm</a></button>
+                <button> <a href="admin/view/client/search.php">Tìm kiếm</a></button>
             </div>
             <div class="header-actions">
 
