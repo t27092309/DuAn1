@@ -13,12 +13,12 @@ include "footer.php";
 $id = "";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    echo "id: $id <hr/>";
+    // echo "id: $id <hr/>";
 }
 $act = "";
 if (isset($_GET["act"])) {
     $act = $_GET["act"];
-    echo "act: $act<hr/>";
+    // echo "act: $act<hr/>";
 
     switch ($act) {
         case "":

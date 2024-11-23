@@ -170,7 +170,8 @@
     </footer>
 </main>
 
-<script src="/node_modules/@splidejs/splide/dist/js/splide.min.js" type="text/Javascript"></script>
+
+<!-- <script src="/node_modules/@splidejs/splide/dist/js/splide.min.js" type="text/Javascript"></script>
 <script type="text/javascript">
     var splide = new Splide('.splide', {
         type: 'loop',
@@ -181,4 +182,4 @@
     });
 
     splide.mount();
-</script>
+</script> -->
