@@ -35,7 +35,7 @@
                         <td><?= $product->title_product ?></td>
                         <td>
                             <div style="height: 100%; width: 100%;">
-                                <img style="width: 100%;" src="<?= $product->img_product ?>" alt="">
+                                <img style="width: 100%;" src="/DuAn1<?= $product->img_product ?>" alt="">
                             </div>
                         </td>
                         <td><?= $product->price_product ?></td>
@@ -47,7 +47,7 @@
                                 <a style="text-decoration: none; color: white;" href="?act=product-update&id=<?= $product->id_product ?>">Update</a>
                             </button>
                             <button type="button" class="btn btn-danger mb-1" style="width: 80px;">
-                                <a style="text-decoration: none; color: white;" href="?act=product-delete&id=<?= $product->id_product ?>">Delete</a>
+                                <a style="text-decoration: none; color: white;" href="?act=product-delete&id=<?= $product->id_product ?>" onclick="return confirm('Xóa nhá?????')">Delete</a>
                             </button>
                         </td>
                     </tr>

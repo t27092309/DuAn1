@@ -23,7 +23,7 @@
          </div>
       </div>
    </div>
-      <?php include "view/boxright.php"; ?>
+      <!-- <?php include "view/boxright.php"; ?> -->
 </main>
 
 

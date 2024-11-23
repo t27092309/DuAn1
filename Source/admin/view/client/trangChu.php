@@ -30,11 +30,11 @@
                 </div>
                 <div class="category-item">
                     <img src="https://via.placeholder.com/200x200" alt="Category 2">
-                    <p>Văn Phòng Phẩm</p>
+                    <p>HOT Trend</p>
                 </div>
                 <div class="category-item">
                     <img src="https://via.placeholder.com/200x200" alt="Category 3">
-                    <p>Đồ Chơi</p>
+                    <p>SALE</p>
                 </div>
                 <div class="category-item">
                     <img src="https://via.placeholder.com/200x200" alt="Category 4">
@@ -54,7 +54,7 @@
                 ?>
                 <!-- Product Item -->
                 <div class="product-item">
-                    <img src="..<?php $product->img_product ?>" alt="Product 1">
+                    <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
                     <h3><?= $product->title_product ?></h3>
                     <p class="price"><?= $product->price_product ?></p>
                     <button>Mua ngay</button>
@@ -170,7 +170,8 @@
     </footer>
 </main>
 
-<script src="/node_modules/@splidejs/splide/dist/js/splide.min.js" type="text/Javascript"></script>
+
+<!-- <script src="/node_modules/@splidejs/splide/dist/js/splide.min.js" type="text/Javascript"></script>
 <script type="text/javascript">
     var splide = new Splide('.splide', {
         type: 'loop',
@@ -181,4 +182,4 @@
     });
 
     splide.mount();
-</script>
+</script> -->

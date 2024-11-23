@@ -5,7 +5,7 @@ include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
 
-include "header.php";
+include "./header.php";
 
 include "footer.php";
 
@@ -13,12 +13,12 @@ include "footer.php";
 $id = "";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    echo "id: $id <hr/>";
+    // echo "id: $id <hr/>";
 }
 $act = "";
 if (isset($_GET["act"])) {
     $act = $_GET["act"];
-    echo "act: $act<hr/>";
+    // echo "act: $act<hr/>";
 
     switch ($act) {
         case "":
