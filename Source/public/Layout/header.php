@@ -34,7 +34,7 @@
             </div>
             <div class="header-actions">
 
-                <a href="#" class="account">
+                <a href="dangky.php" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">
