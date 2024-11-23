@@ -1,10 +1,29 @@
 <?php
-if (isset($_POST['update_quantity'])) {
-    $cart_id = $_POST['cart_id'];
-    $new_quantity = $_POST['quantity'];
+// Nhận dữ liệu từ form
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    $price = $_POST['price'];
 
-    // Cập nhật số lượng
-    $update_stmt = $pdo->prepare("UPDATE cart SET quantity = :quantity WHERE id = :cart_id AND user_id = :user_id");
-    $update_stmt->execute(['quantity' => $new_quantity, 'cart_id' => $cart_id, 'user_id' => $user_id]);
+    // Kiểm tra dữ liệu hợp lệ
+    if (empty($name) || $price <= 0) {
+        echo "Tên sản phẩm và giá không hợp lệ!";
+        exit;
+    }
+
+    // Thêm sản phẩm vào danh sách (tạm lưu vào session)
+    session_start();
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = [];
+    }
+
+    $_SESSION['cart'][] = [
+        'name' => $name,
+        'price' => $price,
+        'quantity' => 1,
+    ];
+
+    // Quay về trang chính
+    header("Location: index.php");
+    exit;
 }
 ?>
