@@ -26,7 +26,6 @@
                 <button> <a href="./search.php">Tìm kiếm</a></button>
             </div>
             <div class="header-actions">
-
                 <a href="admin/?act=product-list" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
@@ -42,7 +41,19 @@
             <section class="pro">
                 <div class="product">
                     <div class="poster">
-                        <img src="./Image/459585503-547035301107882-3644353517869357068-n-8192.png" alt="Product Image">
+                        <div class="product-list">
+                            <?php 
+                            foreach($homeProductList as $product):
+                            ?>
+                            <!-- Product Item -->
+                            <div class="product-item">
+                                <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
+                                <h3><?= $product->title_product ?></h3>
+                                <p class="price"><?= $product->price_product ?></p>
+                                <button>Mua ngay</button>
+                            </div>
+                            <?php endforeach ?>
+                        </div>
                     </div>
                     <div class="chosse">
                         <div class="box"></div>
