@@ -210,3 +210,34 @@ if (isset($_GET['remove'])) {
 </body>
 
 </html>
+<?php
+// Kết nối cơ sở dữ liệu
+include('database.php');
+
+// Lấy danh sách sản phẩm từ cơ sở dữ liệu
+$products = $pdo->query("SELECT * FROM product")->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+</head>
+<body>
+    <h1>Sản phẩm</h1>
+    <?php foreach ($products as $product): ?>
+        <div class="product">
+            <img src="img/<?= $product['img_product']; ?>" alt="<?= $product['title_product']; ?>">
+            <p><?= $product['title_product']; ?></p>
+            <p><?= number_format($product['price_product']); ?> đ</p>
+            <form action="add_to_cart.php" method="POST">
+                <input type="hidden" name="product_id" value="<?= $product['id_product']; ?>">
+                <input type="number" name="quantity" value="1" min="1" required>
+                <button type="submit" name="add_to_cart">Thêm vào giỏ</button>
+            </form>
+        </div>
+    <?php endforeach; ?>
+</body>
+</html>

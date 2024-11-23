@@ -1,23 +1,43 @@
 <?php
+session_start();
+include('database.php');  // Kết nối cơ sở dữ liệu
+
 if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
     $quantity = $_POST['quantity'];
-    $user_id = 1; // Giả sử người dùng có ID là 1, bạn cần quản lý session người dùng
+    $user_id = 1;  // Giả sử người dùng có ID là 1
 
-    // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
-    $stmt = $pdo->prepare("SELECT * FROM cart WHERE product_id = :product_id AND user_id = :user_id");
-    $stmt->execute(['product_id' => $product_id, 'user_id' => $user_id]);
+    // Kiểm tra sản phẩm đã có trong giỏ hay chưa
+    $stmt = $pdo->prepare("SELECT * FROM cart WHERE id_user = :user_id");
+    $stmt->execute(['user_id' => $user_id]);
+    $cart = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$cart) {
+        // Nếu chưa có giỏ hàng, tạo mới
+        $stmt = $pdo->prepare("INSERT INTO cart (id_user) VALUES (:user_id)");
+        $stmt->execute(['user_id' => $user_id]);
+        $cart_id = $pdo->lastInsertId();  // Lấy ID giỏ hàng vừa tạo
+    } else {
+        $cart_id = $cart['id_cart'];
+    }
+
+    // Kiểm tra sản phẩm có trong giỏ chưa
+    $stmt = $pdo->prepare("SELECT * FROM cart_items WHERE id_cart = :cart_id AND id_product = :product_id");
+    $stmt->execute(['cart_id' => $cart_id, 'product_id' => $product_id]);
     $cart_item = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($cart_item) {
-        // Nếu có, cập nhật số lượng
+        // Cập nhật số lượng nếu sản phẩm đã có trong giỏ
         $new_quantity = $cart_item['quantity'] + $quantity;
-        $update_stmt = $pdo->prepare("UPDATE cart SET quantity = :quantity WHERE product_id = :product_id AND user_id = :user_id");
-        $update_stmt->execute(['quantity' => $new_quantity, 'product_id' => $product_id, 'user_id' => $user_id]);
+        $update_stmt = $pdo->prepare("UPDATE cart_items SET quantity = :quantity WHERE id_cart = :cart_id AND id_product = :product_id");
+        $update_stmt->execute(['quantity' => $new_quantity, 'cart_id' => $cart_id, 'product_id' => $product_id]);
     } else {
-        // Nếu chưa có, thêm mới vào giỏ hàng
-        $insert_stmt = $pdo->prepare("INSERT INTO cart (product_id, quantity, user_id) VALUES (:product_id, :quantity, :user_id)");
-        $insert_stmt->execute(['product_id' => $product_id, 'quantity' => $quantity, 'user_id' => $user_id]);
+        // Thêm sản phẩm vào giỏ hàng
+        $insert_stmt = $pdo->prepare("INSERT INTO cart_items (id_cart, id_product, quantity) VALUES (:cart_id, :product_id, :quantity)");
+        $insert_stmt->execute(['cart_id' => $cart_id, 'product_id' => $product_id, 'quantity' => $quantity]);
     }
+
+    header("Location: cart.php");
+    exit;
 }
 ?>
