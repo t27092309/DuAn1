@@ -39,7 +39,7 @@ if (isset($_GET['remove'])) {
 }
 
 // Kết nối cơ sở dữ liệu
-include(__DIR__ . '/duan1');
+include(__DIR__ . '/cart_items');
 
 // Lấy danh sách sản phẩm từ cơ sở dữ liệu
 $products = isset($pdo) ? $pdo->query("SELECT * FROM product")->fetchAll(PDO::FETCH_ASSOC) : [];
