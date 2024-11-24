@@ -37,7 +37,7 @@
                 <a href="dangky.php" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
-                <a href="admin/public/giohang/index.php" class="cart">
+                <a href="public/giohang/index.php" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
                 </a>
                 <a href="admin/?act=product-list">
