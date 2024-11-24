@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('database.php');  // Kết nối cơ sở dữ liệu
+include('duan1');  // Kết nối cơ sở dữ liệu
 
 if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];

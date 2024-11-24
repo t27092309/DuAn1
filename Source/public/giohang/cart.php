@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('database.php');  // Kết nối cơ sở dữ liệu
+include('duan1');  // Kết nối cơ sở dữ liệu
 
 $user_id = 1;  // Giả sử người dùng có ID là 1
 
