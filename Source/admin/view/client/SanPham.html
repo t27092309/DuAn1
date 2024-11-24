@@ -48,9 +48,6 @@
                             <!-- Product Item -->
                             <div class="product-item">
                                 <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
-                                <h3><?= $product->title_product ?></h3>
-                                <p class="price"><?= $product->price_product ?></p>
-                                <button>Mua ngay</button>
                             </div>
                             <?php endforeach ?>
                         </div>

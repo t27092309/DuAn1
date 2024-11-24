@@ -30,11 +30,11 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="">Tìm kiếm</a></button>
+                <button> <a href="admin/view/client/search.php">Tìm kiếm</a></button>
             </div>
             <div class="header-actions">
 
-                <a href="" class="account">
+                <a href="dangky.php" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">
