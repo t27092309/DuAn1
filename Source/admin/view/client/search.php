@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.php">FAHASA</a>
+                <a href="#">FAHASA</a>
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="index.php">Trang chủ</a></li>
+                    <li><a href="?act=home">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
                     <li><a href="#">Đồ chơi</a></li>
@@ -25,18 +25,14 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="admin/view/client/search.php">Tìm kiếm</a></button>
+                <button> <a href="./search.php">Tìm kiếm</a></button>
             </div>
-            <!-- <div id="header-actions">
-
-                <a href="#" class="account">
+            <div class="header-actions">
+                <a href="admin/?act=product-list" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                </a>
-                <a href="admin/?act=product-list">
-                    <i></i>a -->
                 </a>
             </div>
         </div>
@@ -50,15 +46,14 @@
                 <h2>Tất cả nhóm sản phẩm :</h2>
                 <nav>
                     <ul style="list-style: none;">
-                        <li>Tiểu thuyết</li> <br>
-                        <li>Light Novel</li> <br>
-                        <li>Truyện ngắn</li> <br>
-                        <li>Truyện trinh thám</li> <br>
-                        <li>Kiếm hiệp</li><br>
-                        <li>Tiểu thuyết</li><br>
-                        <li>Truyện ngắn</li><br>
-                        <li>Light Novel</li><br>
-                        <li>Cuoc song</li><br>
+                        <li><label><input type="checkbox">Tiểu thuyết</label></li> <br>
+                        <li><label><input type="checkbox">Light Novel</label></li> <br>
+                        <li><label><input type="checkbox">Truyện ngắn</label></li> <br>
+                        <li><label><input type="checkbox">Truyện trinh thám</label></li> <br>
+                        <li><label><input type="checkbox">Kiếm hiệp</label></li><br>
+                        <li><label><input type="checkbox">Truyện ngắn</label></li><br>
+                        <li><label><input type="checkbox">Light Novel</label></li><br>
+                        <li><label><input type="checkbox">Cuoc song</label></li><br>
                     </ul>
                 </nav>
                 
@@ -77,11 +72,11 @@
                 <h2>Nhà xuất bản :</h2>
                 <nav>
                     <ul style="list-style: none;">
-                        <li>Kim Đồng</li> <br>
-                        <li>Nhã Nam</li> <br>
-                        <li>Minh Thắng</li> <br>
-                        <li>Đông A</li> <br>
-                        <li>Đinh Tị</li><br>
+                        <li><label><input type="checkbox">Kim Đồng</label></li> <br>
+                        <li><label><input type="checkbox">Nhã Nam</label> </li> <br>
+                        <li><label><input type="checkbox">Minh Thắng</label></li> <br>
+                        <li><label><input type="checkbox">Than Y</label></li> <br>
+                        <li><label><input type="checkbox">Đinh Tị</label></li><br>
                     </ul>
                 </nav>
             </div>
@@ -89,9 +84,9 @@
                 <h2>Language :</h2>
                 <nav>
                     <ul style="list-style: none;">
-                        <li>Tiếng Việt</li> <br>
-                        <li>Tiếng Anh</li> <br>
-                        <li>Tiếng Đức</li> <br>
+                        <li><label><input type="checkbox">Tiếng Việt</label></li> <br>
+                        <li><label><input type="checkbox">Tiếng Anh</label></li> <br>
+                        <li><label><input type="checkbox">Tiếng Đức</label></li> <br>
                     </ul>
                 </nav>
             </div>
@@ -99,8 +94,8 @@
                 <h2>Loại sách :</h2>
                 <nav>
                     <ul style="list-style: none;">
-                        <li>Bìa cứng</li> <br>
-                        <li>Bìa mềm</li> <br>
+                        <li><label><input type="checkbox">Bìa cứng</label></li> <br>
+                        <li><label><input type="checkbox">Bìa mềm</label></li> <br>
                     </ul>
                 </nav>
             </div>
@@ -123,19 +118,6 @@
             </div>
 
             <div class="SP">
-                <div class="product-list">
-                <?php 
-                foreach($homeProductList as $product):
-                ?>
-                <!-- Product Item -->
-                <div class="product-item">
-                    <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
-                    <h3><?= $product->title_product ?></h3>
-                    <p class="price"><?= $product->price_product ?></p>
-                    <button>Mua ngay</button>
-                </div>
-                <?php endforeach ?>
-            </div>
                 <div class="SP1">                                      
                 </div>
                 <div class="SP1">                                      
