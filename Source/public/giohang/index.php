@@ -8,7 +8,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_product'])) {
     $product_name = $_POST['name'];
     $product_price = $_POST['price'];
-    $product_quantity = 1;  // Mặc định là 1 sản phẩm
+    $product_quantity = 10;  
 
     // Thêm sản phẩm mới vào giỏ hàng
     $cart[] = [
