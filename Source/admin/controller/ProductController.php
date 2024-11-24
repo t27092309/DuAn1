@@ -14,6 +14,12 @@ class ProductController
         include "admin/view/client/trangChu.php";
     }
 
+    public function productDetail($id_product){
+        $productDetail = $this->productQuery->detail($id_product);
+
+        include "admin/view/client/SanPham.php";
+    }
+
     public function showList()
     {
 
@@ -126,6 +132,9 @@ class ProductController
         }
 
         include "view/product/create.php";
+    }
+    public function showSearch(){
+        
     }
 
     
