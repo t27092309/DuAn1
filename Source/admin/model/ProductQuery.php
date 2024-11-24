@@ -99,6 +99,33 @@ class ProductQuery
             echo "<hr>";
         }
     }
+    //----------------------------------------------------------Details()---------------------------------------------------
+    public function detail($id_product){
+        try{
+            $sql = "SELECT * FROM product_detail WHERE id_product = $id_product";
+            $data = $this->pdo->query($sql)->fetch();
+
+            if ($data !== false) {
+                $product = new Product();
+                $product->id_product = $data['id_product'];
+                $product->title_product = $data['title_product'];
+                $product->img_product = $data['img_product'];
+                $product->price_product = $data['price_product'];
+                $product->description_product = $data['description_product'];
+                $product->author_product = $data['author_product'];
+                $product->supplier = $data['supplier'];
+                $product->publisher = $data['publisher'];
+                $product->publish_date = $data['publish_date'];
+                $product->weight = $data['weight'];
+                $product->size = $data['size'];
+                return $product;
+            }
+        } catch (Exception $error) {
+            echo "Detail product error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
 
     //---------------------------------------------------------Insert()----------------------------------------------
     public function insert(Product $product)
@@ -150,12 +177,14 @@ class ProductQuery
         }
     }
     //---------------------------------------------------------Search()----------------------------------------------
-    // public function search(){
-    //     try{
-    //         $sql = "";
-    //         $data = ;
-    //     }catch(Exception $error){
-    //         echo ""
-    //     }
-    // }
+    public function search(){
+        try{
+            $sql = "SELECT * FROM product WHERE title_product LIKE ?";
+            $data = $this->pdo->exec($sql);
+        }catch(Exception $error){
+            echo "Search error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
 }

@@ -53,11 +53,13 @@
                 foreach($homeProductList as $product):
                 ?>
                 <!-- Product Item -->
-                <div class="product-item">
+                <div class="product-item" >
                     <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
                     <h3><?= $product->title_product ?></h3>
                     <p class="price"><?= $product->price_product ?></p>
-                    <button><a href="../client/SanPham.php"></a>Mua ngay</button>
+                    <button>
+                        <a href="./SanPham.php">Mua ngay</a>
+                    </button>
                 </div>
                 <?php endforeach ?>
             </div>
