@@ -13,7 +13,7 @@
                 <div class="box_title">QUÊN MẬT KHẨU</div>
                 <div class="box_content">
                 <div class="box_dangky">
-                <form action="trangChu.php?act=quenmk" method="POST">
+                <form action="index.php?act=quenmk" method="POST">
                    Email: &emsp;<input type="email" name="email" placeholder="Email"> <br> <br>
                    
                     <input type="submit" value="Gửi" name="guiemail" >

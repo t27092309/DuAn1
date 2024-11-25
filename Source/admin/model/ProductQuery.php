@@ -99,15 +99,42 @@ class ProductQuery
             echo "<hr>";
         }
     }
+    //----------------------------------------------------------Details()---------------------------------------------------
+    public function detail($id_product){
+        try{
+            $sql = "SELECT * FROM product_detail WHERE id_product = $id_product";
+            $data = $this->pdo->query($sql)->fetch();
+
+            if ($data !== false) {
+                $product = new Product();
+                $product->id_product = $data['id_product'];
+                $product->title_product = $data['title_product'];
+                $product->img_product = $data['img_product'];
+                $product->price_product = $data['price_product'];
+                $product->description_product = $data['description_product'];
+                $product->author_product = $data['author_product'];
+                $product->supplier = $data['supplier'];
+                $product->publisher = $data['publisher'];
+                $product->publish_date = $data['publish_date'];
+                $product->weight = $data['weight'];
+                $product->size = $data['size'];
+                return $product;
+            }
+        } catch (Exception $error) {
+            echo "Detail product error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
 
     //---------------------------------------------------------Insert()----------------------------------------------
     public function insert(Product $product)
     {
         try {
-            $sql = "INSERT INTO product(title_product, img_product, price_product, description_product, id_category, author_product) VALUES('".$product->title_product."', '".$product->img_product."', '".$product->price_product."', '".$product->description_product."', '".$product->id_category."', '".$product->author_product."')";
+            $sql = "INSERT INTO product(title_product, img_product, price_product, description_product, id_category, author_product) VALUES('" . $product->title_product . "', '" . $product->img_product . "', '" . $product->price_product . "', '" . $product->description_product . "', '" . $product->id_category . "', '" . $product->author_product . "')";
             $data = $this->pdo->exec($sql);
 
-            if($data === 1){
+            if ($data === 1) {
                 return "success";
             }
         } catch (Exception $error) {
@@ -121,10 +148,10 @@ class ProductQuery
     public function update($id_product, Product $product)
     {
         try {
-            $sql = "UPDATE product SET title_product = '".$product->title_product."', img_product = '".$product->img_product."', price_product = '".$product->price_product."', description_product = '".$product->description_product."', id_category = '".$product->id_category."', author_product = '".$product->author_product."' WHERE id_product = $id_product";
+            $sql = "UPDATE product SET title_product = '" . $product->title_product . "', img_product = '" . $product->img_product . "', price_product = '" . $product->price_product . "', description_product = '" . $product->description_product . "', id_category = '" . $product->id_category . "', author_product = '" . $product->author_product . "' WHERE id_product = $id_product";
             $data = $this->pdo->exec($sql);
 
-            if($data === 1 || $data === 0){
+            if ($data === 1 || $data === 0) {
                 return "success";
             }
         } catch (Exception $error) {
@@ -140,11 +167,22 @@ class ProductQuery
             $sql = "DELETE FROM product WHERE id_product = $id_product ";
             $data = $this->pdo->exec($sql);
 
-            if($data === 1 ){
+            if ($data === 1) {
                 return "success";
             }
         } catch (Exception $error) {
             echo "Delete error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
+    //---------------------------------------------------------Search()----------------------------------------------
+    public function search(){
+        try{
+            $sql = "SELECT * FROM product WHERE title_product LIKE ?";
+            $data = $this->pdo->exec($sql);
+        }catch(Exception $error){
+            echo "Search error";
             echo "Error: " . $error->getMessage();
             echo "<hr>";
         }

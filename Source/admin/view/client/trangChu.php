@@ -25,7 +25,7 @@
             <h2>Danh mục nổi bật</h2>
             <div class="category-list">
                 <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 1">
+                    <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/240715/atomichabit100x100.jpg" alt="Category 1">
                     <p>Sách Mới</p>
                 </div>
                 <div class="category-item">
@@ -53,11 +53,33 @@
                 foreach($homeProductList as $product):
                 ?>
                 <!-- Product Item -->
-                <div class="product-item">
+                <div class="product-item" >
                     <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
                     <h3><?= $product->title_product ?></h3>
                     <p class="price"><?= $product->price_product ?></p>
-                    <button>Mua ngay</button>
+                    <button>
+                        <a href="./SanPham.php">Mua ngay</a>
+                    </button>
+                </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </section>
+    <section class="featured-products">
+        <div class="container">
+            <h2>HOT SEARCH</h2>
+            <div class="product-list">
+                <?php 
+                foreach($homeProductList as $product):
+                ?>
+                <!-- Product Item -->
+                <div class="product-item" >
+                    <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
+                    <h3><?= $product->title_product ?></h3>
+                    <p class="price"><?= $product->price_product ?></p>
+                    <button>
+                        <a href="./SanPham.php">Mua ngay</a>
+                    </button>
                 </div>
                 <?php endforeach ?>
             </div>
@@ -71,12 +93,10 @@
             <h2>Chương trình khuyến mãi</h2>
             <div class="promo-list">
                 <div class="promo-item">
-                    <img src="https://via.placeholder.com/600x300" alt="Promo 1">
-                    <p>Giảm 50% Sách Giáo Khoa</p>
+                    <img src="https://cdn0.fahasa.com/media/magentothem/banner7/Diamond_1124_AlphaBooks_Resize_Slide_840x320.jpg" alt="Promo 1">
                 </div>
                 <div class="promo-item">
-                    <img src="https://via.placeholder.com/600x300" alt="Promo 2">
-                    <p>Mua 2 Tặng 1 Văn Phòng Phẩm</p>
+                    <img src="https://cdn0.fahasa.com/media/magentothem/banner7/BlackFridayCGS_Banner_840x320.png" alt="Promo 2">
                 </div>
             </div>
         </div>
@@ -170,7 +190,8 @@
     </footer>
 </main>
 
-<script src="/node_modules/@splidejs/splide/dist/js/splide.min.js" type="text/Javascript"></script>
+
+<!-- <script src="/node_modules/@splidejs/splide/dist/js/splide.min.js" type="text/Javascript"></script>
 <script type="text/javascript">
     var splide = new Splide('.splide', {
         type: 'loop',
@@ -181,4 +202,4 @@
     });
 
     splide.mount();
-</script>
+</script> -->

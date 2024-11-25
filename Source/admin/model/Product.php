@@ -7,8 +7,13 @@ class Product
     public $img_product;
     public $price_product;
     public $description_product;
-    public $author_product;
     public $id_category;
+    public $author_product;
+    public $supplier;
+    public $publisher;
+    public $publish_date;
+    public $weight;
+    public $size;
 
 
     public function __construct()
