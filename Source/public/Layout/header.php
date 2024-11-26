@@ -35,10 +35,10 @@
             </div>
             <div class="header-actions">
 
-                <a href="dangky.php" class="account">
+                <a href="public/taikhoan/index.php" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
-                <a href="public/giohang/index.php" class="cart">
+                <a href="public/giohang/dangki.php" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
                 </a>
                 <a href="admin/?act=product-list">
