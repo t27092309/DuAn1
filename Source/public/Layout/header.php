@@ -34,7 +34,7 @@
             </div>
             <div class="header-actions">
 
-                <a href="public/taikhoan/index.php" class="account">
+                <a href="public/taikhoan/dangky.php" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="public/giohang/dangki.php" class="cart">
