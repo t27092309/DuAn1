@@ -13,7 +13,10 @@
     <!-- Tiêu đề trang -->
     <div class="container">
         <h3>Trang Danh Sách Sản Phẩm</h3>
-
+        <!-- Khu vực điều hướng -->
+        <button type="button" class="btn btn-success">
+            <a href="?act=product-create" style="color: white; text-decoration: none;">Trang tạo mới</a>
+        </button>
         <table class="table table-striped table-bordered">
             <thead table-primary style="text-align: center;">
                 <tr>
@@ -54,8 +57,5 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <!-- Khu vực điều hướng -->
-        <button type="button" class="btn btn-success">
-            <a href="?act=product-create" style="color: white; text-decoration: none;">Trang tạo mới</a>
-        </button>
+
     </div>

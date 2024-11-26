@@ -9,9 +9,21 @@ class ProductController
     }
     public function __destruct() {}
 
-    public function homeShowList(){
+    public function homeShowList()
+    {
         $homeProductList = $this->productQuery->all();
         include "admin/view/client/trangChu.php";
+    }
+
+    public function productDetail($id_product)
+    {
+        if ($id_product !== "") {
+            $product = new Product();
+
+            $product = $this->productQuery->detail($id_product);
+        }
+
+        include "view/client/SanPham.php";
     }
 
     public function showList()
@@ -28,7 +40,7 @@ class ProductController
         $tbThanhCong = "";
 
         if (isset($_POST['submitForm'])) {
-            var_dump($_POST);
+            // var_dump($_POST);
             // echo "<hr>";
 
 
@@ -37,6 +49,11 @@ class ProductController
             $product->description_product = $_POST['description_product'];
             $product->author_product = $_POST['author_product'];
             $product->id_category = $_POST['id_category'];
+            $product->supplier = $_POST['supplier'];
+            $product->publisher = $_POST['publisher'];
+            $product->weight = $_POST['weight'];
+            $product->size = $_POST['size'];
+            $product->page_number = $_POST['page_number'];
 
 
             if ($product->title_product === "" || $product->price_product === "") {
@@ -77,13 +94,18 @@ class ProductController
             $product = new Product();
             $tbLoi = "";
             $tbThanhCong = "";
-            $product = $this->productQuery->find($id_product);
+            $product = $this->productQuery->detail($id_product);
             if (isset($_POST['submitForm'])) {
                 $product->title_product = trim($_POST['title_product']);
                 $product->price_product = $_POST['price_product'];
                 $product->description_product = $_POST['description_product'];
                 $product->author_product = $_POST['author_product'];
                 $product->id_category = $_POST['id_category'];
+                $product->supplier = $_POST['supplier'];
+                $product->publisher = $_POST['publisher'];
+                $product->weight = $_POST['weight'];
+                $product->size = $_POST['size'];
+                $product->page_number = $_POST['page_number'];
 
                 if ($product->title_product === "" || $product->price_product === "") {
                     $tbLoi = "Tiêu đề và giá không được bỏ trống";
@@ -127,6 +149,5 @@ class ProductController
 
         include "view/product/create.php";
     }
-
-    
+    public function showSearch() {}
 }

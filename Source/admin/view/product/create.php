@@ -12,6 +12,8 @@
 <body>
     <div class="container">
         <h3>Trang Tạo Mới Sản Phẩm</h3>
+        <a class="btn btn-primary" href="?act=product-list" role="button">Back</a>
+
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="title" class="form-label">Tên sản phẩm: </label>
@@ -23,7 +25,7 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Giá bán: </label>
-                <input type="number" class="form-control" name="price_product" placeholder="VD: 20000">
+                <input type="text" class="form-control" name="price_product" placeholder="VD: 20000">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Mô tả sản phẩm: </label>
@@ -34,10 +36,30 @@
                 <input type="text" class="form-control" name="author_product" placeholder="VD: Xuân Quỳnh">
             </div>
             <div class="mb-3">
-                <label for="id_category" class="form-label">Mã thể loại </label>
+                <label for="id_category" class="form-label">Mã thể loại: </label>
                 <input type="number" class="form-control" name="id_category" placeholder="VD: 1: Tài liệu, 2: Sách giáo khoa">
             </div>
-            <button type="submit" name="submitForm" class="btn btn-success">Tạo mới</button>
+            <div class="mb-3">
+                <label for="supplier" class="form-label">Nhà cung cấp: </label>
+                <input type="text" class="form-control" name="supplier" placeholder="VD: FIRST NEWS">
+            </div>
+            <div class="mb-3">
+                <label for="publisher" class="form-label">Nhà xuất bản: </label>
+                <input type="text" class="form-control" name="publisher" placeholder="VD: NXB Tổng hợp HCM">
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Trọng lượng(gr):</label>
+                <input type="number" class="form-control" name="weight" placeholder="VD: 500">
+            </div>
+            <div class="mb-3">
+                <label for="size" class="form-label">Kích thước:</label>
+                <input type="text" class="form-control" name="size" placeholder="VD: 20.5 x 14 cm">
+            </div>
+            <div class="mb-3">
+                <label for="page_number" class="form-label">Số trang: </label>
+                <input type="number" class="form-control" name="page_number" placeholder="VD: 400">
+            </div>
+            <button type="submit" name="submitForm" class="btn btn-success">Tạo mới:</button>
         </form>
 
         <p style="color:red"><?= $tbLoi ?></p>

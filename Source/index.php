@@ -13,10 +13,15 @@ include "./public/Layout/header.php";
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
+    // echo "act: $act";
     switch ($act) {
         case "":
             header('location:index.php');
             break;
+            // case "lien-he":
+            //     $proCtrl = new ProductController();
+            //     $proCtrl->homeLienHe();
+            //     break;
             // case "lien-he":
             //     $proCtrl = new ProductController();
             //     $proCtrl->homeLienHe();
@@ -26,7 +31,12 @@ if (isset($_GET['act'])) {
             //     $proCtrl = new ProductController();
             //     $proCtrl->homeGioiThieu();
             //     break;
+            // case "gioi-thieu":
+            //     $proCtrl = new ProductController();
+            //     $proCtrl->homeGioiThieu();
+            //     break;
     }
+} else {
 } else {
     $proCtrl = new ProductController();
     $proCtrl->homeShowList();

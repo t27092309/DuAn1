@@ -1,32 +1,3 @@
-<?php
-include_once "admin/model/ProductQuery.php"; 
-
-
-$productQuery = new ProductQuery();
-$accountQuery = new AccountQuery($productQuery->pdo);
-
-$thongbao = "";
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dangky'])) {
-  $user = trim($_POST['user']);
-  $email = trim($_POST['email']);
-  $pass = trim($_POST['pass']);
-
-  // Kiểm tra xem email đã tồn tại chưa
-  if ($accountQuery->checkemail($email)) {
-    $thongbao = "Email này đã được sử dụng!";
-  } else {
-    // Thêm tài khoản mới
-    $result = $accountQuery->insert_taikhoan($user, $email, $pass);
-    if ($result) {
-      $thongbao = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
-    } else {
-      $thongbao = "Đăng ký thất bại! Vui lòng thử lại.";
-    }
-  }
-}
-?>
-
 <main class="catalog mb">
   <div class="formdangky">
     <div class="mb">
@@ -85,6 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dangky'])) {
     /* Căn giữa nội dung bên trong form */
   }
 
+  /* Style cho các nhãn và input */
+  .box_content span {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+  }
   /* Style cho các nhãn và input */
   .box_content span {
     font-weight: bold;
