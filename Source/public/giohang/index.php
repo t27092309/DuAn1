@@ -37,7 +37,6 @@ if (isset($_GET['remove'])) {
     unset($cart[$remove_index]); // Xóa sản phẩm theo index
     $_SESSION['cart'] = array_values($cart); // Sắp xếp lại mảng sau khi xóa
 }
-
 // Kết nối cơ sở dữ liệu
 include(__DIR__ . '/cart_items');
 
