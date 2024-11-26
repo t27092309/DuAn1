@@ -7,7 +7,7 @@ include_once "model/ProductQuery.php";
 
 include "./header.php";
 
-include "footer.php";
+include "./footer.php";
 
 
 $id = "";
@@ -71,7 +71,7 @@ if (isset($_GET["act"])) {
 
         case "product-detail":
             $proCtrl = new ProductController();
-            $proCtrl->showDetail($id);
+            $proCtrl->productDetail($id);
             break;
 
         case "home":

@@ -99,10 +99,10 @@ class ProductQuery
             echo "<hr>";
         }
     }
-    //----------------------------------------------------------Details()---------------------------------------------------
+    //----------------------------------------------------------Detail()---------------------------------------------------
     public function detail($id_product){
         try{
-            $sql = "SELECT * FROM product_detail WHERE id_product = $id_product";
+            $sql = "SELECT * FROM product WHERE id_product = $id_product";
             $data = $this->pdo->query($sql)->fetch();
 
             if ($data !== false) {
@@ -112,12 +112,13 @@ class ProductQuery
                 $product->img_product = $data['img_product'];
                 $product->price_product = $data['price_product'];
                 $product->description_product = $data['description_product'];
+                $product->id_category = $data['id_category'];
                 $product->author_product = $data['author_product'];
                 $product->supplier = $data['supplier'];
                 $product->publisher = $data['publisher'];
-                $product->publish_date = $data['publish_date'];
                 $product->weight = $data['weight'];
                 $product->size = $data['size'];
+                $product->page_number = $data['page_number'];
                 return $product;
             }
         } catch (Exception $error) {
@@ -131,7 +132,7 @@ class ProductQuery
     public function insert(Product $product)
     {
         try {
-            $sql = "INSERT INTO product(title_product, img_product, price_product, description_product, id_category, author_product) VALUES('" . $product->title_product . "', '" . $product->img_product . "', '" . $product->price_product . "', '" . $product->description_product . "', '" . $product->id_category . "', '" . $product->author_product . "')";
+            $sql = "INSERT INTO product(title_product, img_product, price_product, description_product, id_category, author_product, supplier, publisher, weight, size, page_number) VALUES('" . $product->title_product . "', '" . $product->img_product . "', '" . $product->price_product . "', '" . $product->description_product . "', '" . $product->id_category . "', '" . $product->author_product . "', '" . $product->supplier . "', '" . $product->publisher . "', '" . $product->weight . "', '" . $product->size	 . "', '" . $product->page_number . "')";
             $data = $this->pdo->exec($sql);
 
             if ($data === 1) {
@@ -148,7 +149,7 @@ class ProductQuery
     public function update($id_product, Product $product)
     {
         try {
-            $sql = "UPDATE product SET title_product = '" . $product->title_product . "', img_product = '" . $product->img_product . "', price_product = '" . $product->price_product . "', description_product = '" . $product->description_product . "', id_category = '" . $product->id_category . "', author_product = '" . $product->author_product . "' WHERE id_product = $id_product";
+            $sql = "UPDATE product SET title_product = '" . $product->title_product . "', img_product = '" . $product->img_product . "', price_product = '" . $product->price_product . "', description_product = '" . $product->description_product . "', id_category = '" . $product->id_category . "', author_product = '" . $product->author_product . "', supplier = '" . $product->supplier . "', publisher =  '" . $product->publisher . "',weight = '" . $product->weight . "', size = '" . $product->size	 . "', page_number = '" . $product->page_number . "' WHERE id_product = $id_product";
             $data = $this->pdo->exec($sql);
 
             if ($data === 1 || $data === 0) {

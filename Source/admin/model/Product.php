@@ -11,9 +11,9 @@ class Product
     public $author_product;
     public $supplier;
     public $publisher;
-    public $publish_date;
     public $weight;
     public $size;
+    public $page_number;
 
 
     public function __construct()

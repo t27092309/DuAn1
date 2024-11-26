@@ -1,42 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angelina Cosmetics</title>
-    <link rel="stylesheet" href="sanpham.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#">FAHASA</a>
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="?act=home">Trang chủ</a></li>
-                    <li><a href="#">Sách</a></li>
-                    <li><a href="#">Văn phòng phẩm</a></li>
-                    <li><a href="#">Đồ chơi</a></li>
-                    <li><a href="#">Khuyến mãi</a></li>
-                </ul>
-            </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="./search.php">Tìm kiếm</a></button>
-            </div>
-            <div class="header-actions">
-                <a href="admin/?act=product-list" class="account">
-                    <i class="fas fa-user"></i> Tài khoản
-                </a>
-                <a href="#" class="cart">
-                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                </a>
-            </div>
-        </div>
-    </header>
 
     <main>
         <div class="container">
@@ -46,9 +7,9 @@
                         <div class="product-list">
 
                             <!-- Product Item -->
-                            <div class="product-item">
-                                <img src="/Source/IMG/Hành Trình Đi Theo Chân.webp" alt="Product 1">
-                            </div>
+                                <div class="product-item">
+                                    <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
+                                </div>
                         </div>
                     </div>
                     <div class="chosse">
@@ -69,62 +30,50 @@
                 </div>
 
                 <div class="product2">
-                    <div class="detail">
-                        <h1 class="h1">Hoa Học Trò - Số 1442</h1>
-                        <div class="di">
-                            <div class="bulletin">
-                                Nhà cung cấp: BÁO TIỀN PHONG <br>
-                                Nhà xuất bản: Báo Sinh Viên VN - Hoa Học Trò
-                            </div>
-                            <div class="bulletin">
-                                Tác giả: Nhiều Tác Giả <br>
-                                Hình thức bìa: Bìa Mềm
+                        <div class="detail">
+                            <h1 class="h1"><?= $product->title_product ?></h1>
+                            <div class="di">
+                                <div class="bulletin">
+                                    Nhà cung cấp: <?= $product->supplier ?><br>
+                                    Nhà xuất bản: <?= $product->publisher ?>
+                                </div>
+                                <div class="bulletin">
+                                    Tác giả: <?= $product->author_product ?> <br>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
                     <div class="detaila">
                         <div class="product-description">
                             <h2>Thông tin chi tiết</h2>
                             <table class="table">
                                 <tr>
                                     <td>Mã hàng</td>
-                                    <td>8938507004097</td>
+                                    <td><?= $product->id_product ?></td>
                                 </tr>
                                 <tr>
                                     <td>Tên Nhà Cung Cấp</td>
-                                    <td>BÁO TIỀN PHONG</td>
+                                    <td><?= $product->supplier ?></td>
                                 </tr>
                                 <tr>
                                     <td>Tác giả</td>
-                                    <td>B R O Group</td>
+                                    <td><?= $product->author_product ?></td>
                                 </tr>
                                 <tr>
                                     <td>NXB</td>
-                                    <td>Báo Sinh Viên Việt Nam - Hoa Học Trò</td>
-                                </tr>
-                                <tr>
-                                    <td>Năm XB</td>
-                                    <td>2024</td>
-                                </tr>
-                                <tr>
-                                    <td>Ngôn Ngữ</td>
-                                    <td>Tiếng Việt</td>
+                                    <td><?= $product->publisher ?></td>
                                 </tr>
                                 <tr>
                                     <td>Trọng lượng (gr)</td>
-                                    <td>100</td>
+                                    <td><?= $product->weight ?></td>
                                 </tr>
                                 <tr>
                                     <td>Kích Thước Bao Bì</td>
-                                    <td>22 x 15 x 0.5 cm</td>
+                                    <td><?= $product->size ?></td>
                                 </tr>
                                 <tr>
                                     <td>Số trang</td>
-                                    <td>52</td>
-                                </tr>
-                                <tr>
-                                    <td>Hình thức</td>
-                                    <td>Bìa Mềm</td>
+                                    <td><?= $product->page_number ?></td>
                                 </tr>
                             </table>
 
@@ -160,18 +109,17 @@
                                 </tbody>
                             </table>
                         </section>
-                        
+
                     </div>
-                    
+
                 </div>
-                
-                
+
+
             </section>
 
             <section class="product-description">
                 <h2>Mô tả sản phẩm</h2>
-                <p>Ảnh bìa: Nhà Xưởng Rồng trong ATVNCG.<br>
-                Chào tháng 10 cùng những điều đặc biệt - ly - vui, teen đã sẵn sàng đón một tháng mới với loạt thông tin thú vị trên Hoa Học Trò 1442 chưa?</p>
+                <p><?= $product->description_product ?></p>
             </section>
 
             <section class="fahasa-recommendations">
@@ -243,25 +191,25 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Dấu gạch phân cách -->
                 <div style="width: 1px; background-color: #ddd; margin: 0 20px;"></div>
-    
-    
-                 <!-- Dịch vụ -->
-                 <div style="flex: 1 1 200px; margin-bottom: 20px;">
+
+
+                <!-- Dịch vụ -->
+                <div style="flex: 1 1 200px; margin-bottom: 20px;">
                     <h4 style="margin-bottom: 10px; color: #333;">Dịch vụ</h4>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 15px;"><a href="#" class="hover-link">Điều khoản sử dụng</a></li>
                         <li style="margin-bottom: 15px;"><a href="#" class="hover-link">Chính sách bảo mật thông tin cá nhân</a></li>
                         <li style="margin-bottom: 15px;"><a href="#" class="hover-link">Chính sách bảo mật thanh toán</a></li>
                         <li><a href="#" class="hover-link">Hệ thống trung tâm - nhà sách</a></li>
-                        
+
                     </ul>
                     <h4 style="margin-bottom: 10px; color: #333;">LIÊN HỆ</h4>
                     <p style="color: #555;">Địa chỉ: FPT Polytechnic</p>
                 </div>
-    
+
                 <div style="flex: 1 1 200px; margin-bottom: 20px;">
                     <h4 style="margin-bottom: 10px; color: #333;">Hỗ trợ</h4>
                     <ul style="list-style: none; padding: 0;">
@@ -271,12 +219,12 @@
                         <li style="margin-bottom: 15px;"><a href="#" class="hover-link">Bảo hành sản phẩm</a></li>
                     </ul>
                     <br>
-                    
-    
-    
+
+
+
                     <p style="color: #555;">cskh@fahasa.com.vn</p>
                 </div>
-        
+
                 <!-- Tài khoản của tôi -->
                 <div style="flex: 1 1 200px; margin-bottom: 20px;">
                     <h4 style="margin-bottom: 10px; color: #333;">Tài khoản của tôi</h4>
@@ -287,21 +235,21 @@
                         <li style="margin-bottom: 15px;"><a href="#" class="hover-link">Lịch sử mua hàng</a></li>
                     </ul>
                     <br>
-                    
-    
+
+
                     <p style="color: #555;">HOTLINE : 0365 295 814</p>
                 </div>
-        
-                
-                
+
+
+
             </div>
-        
+
             <!-- Bản quyền -->
             <div style="text-align: center; padding-top: 10px; color: #555; border-top: 1px solid #ddd;">
                 <p>Giấy chứng nhận Đăng ký Kinh doanh số 0304132047 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày 20/12/2005, đăng ký thay đổi lần thứ 10, ngày 20/05/2022.</p>
             </div>
         </footer>
-        
+
         <style>
             /* CSS cho hiệu ứng hover */
             .hover-link {
@@ -309,12 +257,10 @@
                 color: #007bff;
                 transition: color 0.3s, text-decoration 0.3s;
             }
-        
+
             .hover-link:hover {
                 color: #0056b3;
                 text-decoration: underline;
             }
         </style>
     </footer>
-</body>
-</html>
