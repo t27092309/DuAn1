@@ -23,7 +23,6 @@
             <nav class="menu">
                 <ul>
                     <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="index.php">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
                     <li><a href="#">Đồ chơi</a></li>
@@ -36,11 +35,10 @@
             </div>
             <div class="header-actions">
 
-                <a href="public/taikhoan/dangky.php" class="account">
-                <a href="?act=dangnhap" class="account">
+                <a href="dangky.php" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
-                <a href="public/giohang/dangki.php" class="cart">
+                <a href="public/giohang/index.php" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
                 </a>
                 <a href="admin/?act=product-list">

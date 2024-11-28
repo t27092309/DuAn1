@@ -1,0 +1,10 @@
+
+.container main .row .boxPro {
+    padding: 20px;
+    float: left;
+    width: 18%;
+    min-height: 300px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
