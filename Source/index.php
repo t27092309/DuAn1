@@ -16,15 +16,6 @@ if (isset($_GET['act'])) {
         case "":
             header('location:index.php');
             break;
-            // case "lien-he":
-            //     $proCtrl = new ProductController();
-            //     $proCtrl->homeLienHe();
-            //     break;
-
-            // case "gioi-thieu":
-            //     $proCtrl = new ProductController();
-            //     $proCtrl->homeGioiThieu();
-            //     break;
     }
 } else {
     $proCtrl = new ProductController();
