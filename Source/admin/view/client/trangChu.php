@@ -58,7 +58,7 @@
                     <h3><?= $product->title_product ?></h3>
                     <p class="price"><?= $product->price_product ?></p>
                     <button>
-                        <a href="./SanPham.php">Mua ngay</a>
+                        <a style="text-decoration: none; color: white" href="admin/?act=product-detail&id=<?= $product->id_product ?>" >Mua ngay</a>
                     </button>
                 </div>
                 <?php endforeach ?>

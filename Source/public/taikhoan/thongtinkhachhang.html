@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Khách Hàng</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .customer-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .info-box {
+            flex: 1 1 45%;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .info-box h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .info-box p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .actions a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        .actions a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thông Tin Khách Hàng</h1>
+        <div class="customer-info">
+            <div class="info-box">
+                <h3><i class="fas fa-user"></i> Thông Tin Cá Nhân</h3>
+                <p><strong>Họ và Tên:</strong></p>
+                <p><strong>Email:</strong> </p>
+                <p><strong>Số Điện Thoại:</strong> </p>
+            </div>
+            <div class="info-box">
+                <h3><i class="fas fa-map-marker-alt"></i></h3>
+                <p><strong>Địa chỉ:</strong>
+            </div>
+        </div>
+        <div class="actions">
+            <a href="edit_taikhoan.php"><i class="fas fa-edit"></i> Chỉnh sửa thông tin</a>
+            <a href="order-history.php"><i class="fas fa-history"></i> Lịch sử đơn hàng</a>
+        </div>
+    </div>
+    
+</body>
+</html>
+
