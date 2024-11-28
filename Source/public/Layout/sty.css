@@ -1,0 +1,246 @@
+*{
+    width: 1440px;
+    margin: 0 auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+    width: 100%;
+    background-color: #e91e63;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo a {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header .menu ul {
+    width: 650px;
+    list-style: none;
+    display: flex;
+    /* gap: 30px; */
+}
+.header .menu ul li {
+    width: 150px;
+    height: 19px;
+}
+.header .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header .menu a:hover {
+    color: #ffc107;
+}
+
+.header .search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header .search-bar input {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+}
+
+.header .search-bar button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.header .search-bar button{
+    width: 200px;
+}
+.header .search-bar button:hover {
+    background-color: #ff9800;
+}
+
+.header-actions a {
+    color: #333;
+    text-decoration: none;
+}
+
+.header-actions i {
+    margin-right: 5px;
+}
+main{
+    width: 100%px;
+    padding: 90px 0px;
+    margin: 0 auto;
+    background-color: rgb(160, 163, 167);
+    display: flex;
+    justify-content: space-around;
+}
+.list{
+    width: 500px;
+    height: 1500px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+nav ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.products{
+    width: 710px;
+    background-color: #fff;
+    height: 4070px;
+    border-radius: 30px;
+}
+.h1{
+    margin: 20px;
+}
+.listbook{
+    width: 100%;
+    height: 417px;
+    border-bottom:0.2px solid rgb(181, 181, 181) ;
+    border-top:0.2px solid rgb(181, 181, 181) ;
+}
+h2{
+    margin: 20px;
+    font-size: 25px;
+}
+.price{
+    width: 100%;
+    height: 285px;
+    border-bottom: 0.2px solid rgb(181, 181, 181) ;
+}
+.Author{
+    width: 100%;
+    height: 320px;
+    border-bottom: 0.2px solid rgb(181, 181, 181) ;
+}
+.Language{
+    width: 100%;
+    height: 180px;
+    border-bottom: 0.2px solid rgb(181, 181, 181) ;
+}
+.type{
+    width: 100%;
+    height: 150px;
+    border-bottom: 0.2px solid rgb(181, 181, 181) ;
+}
+.dea{
+    width: 100%;
+    height: 112px;
+    border-bottom: 0.2px solid rgb(181, 181, 181) ;
+    display: flex;
+    align-items: center;
+}
+.box{
+    width: 160px;
+    height: 44px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box1{
+    width: 160px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SP{
+    width: 100%;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SP1{
+    width: 150px;
+    height: 250px;
+    background-color: #8f8d8d;
+
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+}
+
+.footer-section {
+    text-align: center;
+    width: 30%;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    width: 40px;
+    height: 40px;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer a {
+    color: #ffc107;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff9800;
+}

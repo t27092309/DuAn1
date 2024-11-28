@@ -49,6 +49,10 @@
             </div>
             
          </div>
+    <?php
+        // include_once "view/boxright.php";
+        
+    ?>
          
       </main>
   

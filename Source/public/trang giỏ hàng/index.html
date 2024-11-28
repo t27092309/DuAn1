@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Sale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Banner -->
+        <div class="banner">
+            <img src="/img/TrangCTthang10_Mainbanner_Resize_Header_1263x60.png" alt="Main Banner">
+        </div>
+
+        <!-- Menu -->
+        <div class="menu">
+            <img src="/img/fahasa-logo.png" alt="Fahasa Logo" class="logo">
+            <div class="search-container">
+                <input class="search-input" type="text" placeholder="Search...">
+                <span class="search-icon"></span>
+            </div>
+            <div class="menu-icons">
+                <img src="/img/Vector.png" alt="Icon">
+                <img src="/img/Vector (1).png" alt="Icon">
+                <img src="/img/Vector (2).png" alt="Icon">
+                <img src="/img/Vector (3).png" alt="Icon">
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Section: Cart Products -->
+            <div class="left-section">
+                <div class="cart">
+                    <h2>Giỏ Hàng</h2>
+                    <div class="cart-header">
+                        <label><input type="checkbox" id="select-all"> Chọn tất cả (3 sản phẩm)</label>
+                        <span class="quantity-header">Số lượng</span>
+                        <span>Thành tiền</span>
+                    </div>
+
+                    <!-- Product Items -->
+                    <div class="cart-item">
+                        <input type="checkbox" class="item-checkbox">
+                        <div class="product-details">
+                            <p>Hoa Học Trò - Số 1442</p>
+                            <span class="item-price">19000</span> đ
+                        </div>
+                        <div class="quantity">
+                            <input type="number" class="item-quantity" value="1" min="1">
+                        </div>
+                        <span class="total-price">19000 đ</span>
+                        <button class="remove">🗑️</button>
+                    </div>
+                    <div class="cart-item">
+                        <input type="checkbox" class="item-checkbox">
+                        <div class="product-details">
+                            <p>Hoa Hướng Dương - Số 1042</p>
+                            <span class="item-price">19000</span> đ
+                        </div>
+                        <div class="quantity">
+                            <input type="number" class="item-quantity" value="1" min="1">
+                        </div>
+                        <span class="total-price">19000 đ</span>
+                        <button class="remove">🗑️</button>
+                    </div>
+                    <div class="cart-item">
+                        <input type="checkbox" class="item-checkbox">
+                        <div class="product-details">
+                            <p>Hoa Bàng - Số 1492</p>
+                            <span class="item-price">19000</span> đ
+                        </div>
+                        <div class="quantity">
+                            <input type="number" class="item-quantity" value="1" min="1">
+                        </div>
+                        <span class="total-price">19000 đ</span>
+                        <button class="remove">🗑️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section: Discount, Shipping, Total, Checkout -->
+            <div class="right-section">
+                <!-- Discount Section -->
+                <div class="discount-section">
+                    <div class="discount-header">
+                        <h2>Mã giảm giá</h2>
+                        <a href="#">Xem thêm ></a>
+                    </div>
+                    <div class="discount-codes">
+                        <div class="code-box"></div>
+                        <div class="code-box"></div>
+                        <div class="code-box"></div>
+                    </div>
+                </div>
+
+                <!-- Shipping Method -->
+                <div class="shipping-method">
+                    <span>Phương thức vận chuyển:</span>
+                    <span class="shipping-option">Giao hàng nhanh <a href="#">Tùy chọn khác</a></span>
+                </div>
+
+                <!-- Total Section -->
+                <div class="total-section">
+                    <div class="total-row">
+                        <span>Thành tiền:</span>
+                        <span id="subtotal">57.000 đ</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Tổng số tiền (gồm VAT):</span>
+                        <span id="total">57.000 đ</span>
+                    </div>
+                </div>
+
+                <!-- Checkout Button -->
+                <div class="checkout-button">
+                    <button id="checkout-btn">Thanh toán</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="newsletter-section">
+            <p class="newsletter-text">Vui lòng nhập thông tin</p>
+            <div class="newsletter-input">
+                <input type="email" placeholder="Nhập email của bạn">
+                <button class="subscribe-btn">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <h3>Dịch vụ</h3>
+            <p>Điều khoản sử dụng</p>
+            <p>Chính sách bảo mật thông tin</p>
+            <p>Chính sách vận chuyển</p>
+        </div>
+        <div class="footer-section">
+            <h3>Hỗ trợ</h3>
+            <p>Chính sách đổi trả hoàn tiền</p>
+            <p>Chính sách bảo hành - bồi hoàn</p>
+            <p>Chính sách khách sỉ</p>
+        </div>
+        <div class="footer-section">
+            <img src="/img/fahasa-logo.png" alt="Fahasa Logo">
+            <p>Địa chỉ: 387-389 Hai Bà Trưng, Quận 3, TP.HCM</p>
+            <div class="payment-icons">
+                <img src="/img/momopay.png 2.png" alt="MoMo">
+                <img src="/img/vnpay_logo.png 2.png" alt="VNPay">
+                <img src="/img/ahamove_logo3.png 2.png" alt="Ahamove">
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const selectAllCheckbox = document.getElementById('select-all');
+        const cartItems = document.querySelectorAll('.cart-item');
+        const subtotalSpan = document.getElementById('subtotal');
+        const totalSpan = document.getElementById('total');
+        const checkoutButton = document.getElementById('checkout-btn');
+
+        // Cập nhật tổng tiền
+        function updateTotal() {
+            let subtotal = 0;
+            cartItems.forEach(item => {
+                const checkbox = item.querySelector('.item-checkbox');
+                const quantityInput = item.querySelector('.item-quantity');
+                const price = parseInt(item.querySelector('.item-price').innerText);
+                if (checkbox.checked) {
+                    subtotal += quantityInput.value * price;
+                }
+            });
+            subtotalSpan.textContent = `${subtotal.toLocaleString()} đ`;
+            totalSpan.textContent = `${subtotal.toLocaleString()} đ`;
+        }
+
+        // Chọn/Bỏ chọn tất cả
+        selectAllCheckbox.addEventListener('change', () => {
+            const isChecked = selectAllCheckbox.checked;
+            cartItems.forEach(item => {
+                item.querySelector('.item-checkbox').checked = isChecked;
+            });
+            updateTotal();
+        });
+
+        // Xử lý sự kiện cho từng sản phẩm
+        cartItems.forEach(item => {
+            const checkbox = item.querySelector('.item-checkbox');
+            const quantityInput = item.querySelector('.item-quantity');
+            const removeButton = item.querySelector('.remove');
+
+            checkbox.addEventListener('change', updateTotal);
+            quantityInput.addEventListener('input', updateTotal);
+
+            removeButton.addEventListener('click', () => {
+                item.remove();
+                updateTotal();
+            });
+        });
+
+        // Xử lý nút thanh toán
+        checkoutButton.addEventListener('click', () => {
+            alert('Thanh toán thành công!');
+        });
+
+        // Cập nhật tổng tiền khi tải trang
+        updateTotal();
+    </script>
+</body>
+</html>
