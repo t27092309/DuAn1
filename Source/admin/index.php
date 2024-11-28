@@ -25,30 +25,6 @@ if (isset($_GET["act"])) {
             header('location:index.php');
             break;
 
-            // case "category-list":
-            //     $categoryCtrl = new CategoryController();
-            //     $categoryCtrl->showListCategory();
-            //     break;
-
-            // case "category-create":
-            //     $categoryCtrl = new CategoryController();
-            //     $categoryCtrl->showCreate();
-            //     break;
-            // case "category-update":
-            //     $categoryCtrl = new CategoryController();
-            //     $categoryCtrl->showUpdate($id);
-            //     break;
-
-            // case "category-delete":
-            //     $categoryCtrl = new CategoryController();
-            //     $categoryCtrl->showDelete($id);
-            //     break;
-
-            // case "category-detail":
-            //     $categoryCtrl = new CategoryController();
-            //     $categoryCtrl->showdetail();
-            //     break;
-            // -------------------------------------------------------------
         case "product-list":
             $proCtrl = new ProductController();
             $proCtrl->showList();

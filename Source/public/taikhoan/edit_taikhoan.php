@@ -20,7 +20,7 @@
                 <form action="index.php?act=edit_taikhoan" method="POST">
                  <div class="mb1">
                    <div class="mb10"> 
-                Email:
+                 Email:
                     &emsp;<input type="email" name="email" placeholder="Email" value="<?=$email?>"> <br> <br>
                     </div> 
                     User:
