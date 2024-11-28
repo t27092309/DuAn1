@@ -36,7 +36,7 @@ if (isset($_GET['act'])) {
             //     $proCtrl->homeGioiThieu();
             //     break;
     }
-} else {
+} else { 
 } else {
     $proCtrl = new ProductController();
     $proCtrl->homeShowList();
