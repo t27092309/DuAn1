@@ -1,23 +1,72 @@
+<style>
+    .slides img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    /* box-shadow: 0 4px 10px rgba(0, 1, 2, 1); */
+}
+</style>
 <main>
     <!-- Banner -->
     <section class="banner">
-        <div class="container">
-            <div class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_1.webp" alt="">
-                        </li>
-                        <!-- <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_2.webp" alt="">
-                        </li>
-                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_3.webp" alt="">
-                        </li>
-                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_4.webp" alt="">
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="IMG/Banner_1.webp" alt="Slide 1">
         </div>
-    </section>
+        <div class="slides">
+            <img src="IMG/Banner_2.webp" alt="Slide 2">
+        </div>
+        <div class="slides">
+            <img src="IMG/Banner_3.webp" alt="Slide 3">
+        </div>
+    </div>
+
+    <div class="dots">
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+        <span class="dot" onclick="setSlide(3)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Tự động chuyển slide sau mỗi 3 giây
+        setInterval(() => {
+            changeSlide(1);
+        }, 2000);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function setSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</section>
+
 
     <!-- Categories Section -->
     <section class="categories">

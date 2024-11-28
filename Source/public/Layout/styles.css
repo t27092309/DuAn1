@@ -97,12 +97,11 @@ body {
     position: relative;
 }
 
-.banner img {
+.slides{
     border-radius: 10px;
     object-fit: cover;
     /* box-shadow: 0 4px 10px rgba(0, 1, 2, 1); */
 }
-
 /* Featured Products */
 .featured-products {
     padding: 40px 0;
@@ -319,7 +318,7 @@ body {
     margin: 0 auto;
 }
 .header {
-    background-color: #e91e63;
+    background-color: #f44336;
     color: #fff;
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
