@@ -5,11 +5,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./sty.css">
+    <!-- <link rel="stylesheet" href="./sty.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* General reset */
+/* General reset */
+body, ul, li, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Fonts and colors */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+/* Header */
+header {
+    background-color: #f44336;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    width: 100px;
+}
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+.menu{
+    width: 500px;
+}
+.menu ul {
+    display: flex;
+    gap: 15px;
+}
+
+.menu ul li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #ffd700;
+}
+
+.search-bar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #ffd700;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.header-actions a {
+    color: white;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.header-actions a:hover {
+    color: #ffd700;
+}
+
+/* Main */
+main {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.list {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list h1, .list h2 {
+    margin-bottom: 15px;
+    color: #f44336;
+}
+
+.list ul li {
+    margin-bottom: 10px;
+}
+
+.list label {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Products */
+.products {
+    width: 70%;
+}
+
+.dea {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.dea .box, .dea .box1 {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #f44336;
+    border: 1px solid #f44336;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dea .box:hover, .dea .box1:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.SP {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.SP1 {
+    width: calc(25% - 15px);
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.SP1:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+.account{
+    width: 100px;
+}
+.cart{
+    width: 100px;
+}
+    </style>
 </head>
 <body>
-<header class="header">
+<header>
         <div class="container">
             <div class="logo">
                 <a href="#">FAHASA</a>
