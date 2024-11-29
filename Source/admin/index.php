@@ -58,7 +58,6 @@ if (isset($_GET["act"])) {
         //     $proCtrl = new ProductController();
         //     $proCtrl->search();
         //     break;
-
         default:
             include "view/404.php";
             break;
