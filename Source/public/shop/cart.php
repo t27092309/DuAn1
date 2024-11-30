@@ -1,15 +1,9 @@
 <?php
-include 'functions.php';
-session_start();
-
-// Kiểm tra nếu người dùng chưa đăng nhập
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php'); // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
-    exit();
+// Khởi tạo giỏ hàng nếu chưa có
+if (!isset($_SESSION['cartItems'])) {
+    $_SESSION['cartItems'] = []; // Giỏ hàng trống
 }
-
-$userId = $_SESSION['user_id'];
-$cartItems = getCartItems($userId);
+$cartItems = $_SESSION['cartItems'];
 ?>
 
 <!DOCTYPE html>

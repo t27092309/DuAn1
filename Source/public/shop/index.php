@@ -55,34 +55,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </section>
-    <!-- Categories Section -->
-    <div class="categories">
-        <div class="category">
-            <img src="/img/iconsanpham.png" alt="All Products">
-            <p>Tất cả</p>
-        </div>
-        <div class="category">
-            <img src="/img/iconsachthieunhi.png" alt="Children">
-            <p>Thiếu nhi</p>
-        </div>
-        <div class="category">
-            <img src="/img/iconflshsale.png" alt="Psychology">
-            <p>Tâm lý Tư duy</p>
-        </div>
-        <div class="category">
-            <img src="/img/iconsachthieunhi.png" alt="Manga">
-            <p>Manga</p>
-        </div>
-        <div class="category">
-            <img src="/img/icontamlikynang.png" alt="New Books">
-            <p>Sách mới</p>
-        </div>
-        <div class="category">
-            <img src="/img/icon_XemThem.png" alt="More">
-            <p>Xem thêm</p>
-        </div>
-    </div>
-
     <!-- Product List -->
     <section class="product-list container py-5">
         <h2 class="text-center mb-5">Danh sách sản phẩm</h2>
