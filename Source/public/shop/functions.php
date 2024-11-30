@@ -38,7 +38,7 @@ function getCartItems($userId)
     global $pdo;
 
     $stmt = $pdo->prepare("
-        SELECT ci.id_cart_item, ci.id_product, p.title_product, p.price_product, ci.quantity
+        SELECT ci.id_cart_item, ci.id_product, p.title_product, p.price_product, ci.quantity, p.img_product
         FROM cart_items ci
         JOIN cart c ON ci.id_cart = c.id_cart
         JOIN product p ON ci.id_product = p.id_product
@@ -48,13 +48,10 @@ function getCartItems($userId)
 
     $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Kiểm tra nếu giỏ hàng trống
-    if (empty($items)) {
-        die("Lỗi: Giỏ hàng trống.");
-    }
-
+    // Trả về mảng trống nếu không có sản phẩm
     return $items;
 }
+
 
 // Hàm cập nhật số lượng sản phẩm
 function updateCartItem($cartItemId, $quantity)
