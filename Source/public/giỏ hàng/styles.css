@@ -41,6 +41,107 @@ header .logo a {
     font-size: 18px;
 }
 
+/* Style for the product list section */
+.product-list {
+    background-color: #f8f9fa;
+    /* Light background for the product section */
+    padding: 60px 0;
+}
+
+.product-list .product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-list .product:hover {
+    transform: translateY(-5px);
+    /* Elevate card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* Add stronger shadow */
+}
+
+.product-list .product img {
+    max-height: 250px;
+    object-fit: cover;
+    /* Ensure images maintain aspect ratio without distortion */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.product-list .product .card-body {
+    padding: 20px;
+}
+
+.product-list .product .card-body h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-list .product .card-body .card-text {
+    font-size: 1.1rem;
+    color: #d9534f;
+}
+
+.product-list .product .card-body form {
+    margin-top: 20px;
+}
+
+.product-list .product .card-body form .form-control {
+    width: 80px;
+    /* Limit the input width for quantity */
+    margin: 0 auto;
+    display: block;
+}
+
+.product-list .product .card-body form button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+}
+
+/* Responsive grid for product list */
+/* Đảm bảo các sản phẩm có khoảng cách đều giữa các cột */
+.product-list .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* Căn giữa các sản phẩm và đảm bảo không bị lệch */
+    gap: 20px;
+}
+
+.product-list .col-md-4 {
+    flex: 0 0 32%;
+    /* Mặc định 3 sản phẩm mỗi hàng */
+    box-sizing: border-box;
+    /* Đảm bảo các phần tử không bị vỡ bố cục */
+}
+
+@media (max-width: 1200px) {
+    .product-list .col-md-4 {
+        flex: 0 0 32%;
+        /* 3 sản phẩm mỗi hàng */
+    }
+}
+
+@media (max-width: 992px) {
+    .product-list .col-md-4 {
+        flex: 0 0 48%;
+        /* 2 sản phẩm mỗi hàng */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list .col-md-4 {
+        flex: 0 0 100%;
+        /* 1 sản phẩm mỗi hàng */
+    }
+}
+
+
 /* Giỏ hàng */
 .cart {
     background-color: #fff;

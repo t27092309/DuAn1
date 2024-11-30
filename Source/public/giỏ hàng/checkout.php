@@ -24,7 +24,7 @@ foreach ($cartItems as $item) {
 <head>
     <meta charset="UTF-8">
     <title>Thanh toán</title>
-    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="checkout.css">
 </head>
 
 <body>

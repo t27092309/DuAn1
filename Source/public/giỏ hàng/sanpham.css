@@ -1,0 +1,478 @@
+/* Global Styles */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #e91e63;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo a {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header .menu a:hover {
+    color: #ffc107;
+}
+
+.header .search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header .search-bar input {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+}
+
+.header .search-bar button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.header .search-bar button:hover {
+    background-color: #ff9800;
+}
+
+.header-actions a {
+    color: #333;
+    text-decoration: none;
+}
+
+.header-actions i {
+    margin-right: 5px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 104px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+    padding: 50px 20px;
+    background-color: #F1F1F1;
+}
+
+/* Product Section */
+.pro {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.product,
+.product2 {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 49.5%;
+    padding: 20px;
+}
+
+/* .product2 .detaila .product-description table{
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+} */
+th {
+    background-color: #F2F2F2;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.chosse {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.box {
+    width: 30%;
+    height: 60px;
+    background-color: #dcdcdc;
+    border-radius: 8px;
+}
+
+.click {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.them,
+.buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    padding: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.them {
+    background-color: #f1f1f1;
+    border: 1px solid #e60000;
+}
+
+.them:hover {
+    background-color: #e60000;
+    color: #fff;
+}
+
+.buy {
+    background-color: #e60000;
+    color: #fff;
+    border: 1px solid #e60000;
+}
+
+.buy:hover {
+    background-color: #c40000;
+}
+
+.p {
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Ch {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.Ch p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Product Detail */
+/* Đồng bộ kiểu dáng cho detail và detaila */
+.detail,
+.detaila,
+.detailb {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cũng có thể đồng bộ thêm các phần tử con nếu cần */
+.h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.bulletin {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Product Description */
+.product-description {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /* padding: 20px; */
+    margin: 20px 0;
+    border-radius: 10px;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.product-description h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-description p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.product-description .read-more {
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
+/* Fahasa Recommendations */
+.fahasa-recommendations {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fahasa-recommendations h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product-card .price {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.product-card .price del {
+    color: #999;
+    margin-left: 10px;
+}
+
+/* Product Reviews */
+.product-reviews {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-reviews h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.rating-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rating-score h3 {
+    font-size: 24px;
+    color: #ff4d4d;
+}
+
+.rating-score .stars {
+    color: #ff4d4d;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.submit-review {
+    background: #ff4d4d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-review:hover {
+    background: #e60000;
+}
+
+/* Style for product description section */
+
+.product-description {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 20px;
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+    border-radius: 8px;
+}
+
+.product-description h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.product-description p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    /* margin-bottom: 15px; */
+}
+
+.product-description .read-more {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.product-description .read-more:hover {
+    text-decoration: underline;
+}
+
+/* Style for shipping info section */
+.shipping-info {
+    margin-top: 30px;
+    padding: 20px;
+    /* background-color: #f1f1f1; */
+    border-radius: 8px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.shipping-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.shipping-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.shipping-info table,
+.shipping-info th,
+.shipping-info td {
+    border: 1px solid #ddd;
+}
+
+.shipping-info th,
+.shipping-info td {
+    padding: 10px;
+    text-align: center;
+}
+
+.shipping-info th {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.shipping-info td {
+    background-color: #fff;
+    color: #555;
+}
+
+.shipping-info tr:nth-child(even) td {
+    background-color: #fafafa;
+}
+
+.shipping-info tr:hover td {
+    background-color: #f2f2f2;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer a {
+    color: #ffc107;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff9800;
+}
