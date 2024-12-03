@@ -1,0 +1,33 @@
+.login-wrapper{
+    width: 580px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid black;
+}
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="submit"],
+.form-group input[type="text"] {
+    width: 100%;
+    outline: none;
+}
+.form-group input::placeholder {
+    font-size: 12px;
+    color: gray;
+    font-style: italic;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.text-danger{
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+}
+
+.text-success{
+    font-size: 12px;
+    color: green;
+    font-style: italic;
+}

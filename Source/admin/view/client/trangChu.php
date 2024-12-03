@@ -1,46 +1,103 @@
+<style>
+    .slides img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    /* box-shadow: 0 4px 10px rgba(0, 1, 2, 1); */
+}
+</style>
 <main>
     <!-- Banner -->
     <section class="banner">
-        <div class="container">
-            <div class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_1.webp" alt="">
-                        </li>
-                        <!-- <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_2.webp" alt="">
-                        </li>
-                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_3.webp" alt="">
-                        </li>
-                        <li class="splide__slide"><img style="width: 100%;" src="../Source/IMG/Banner_4.webp" alt="">
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="IMG/Banner_1.webp" alt="Slide 1">
         </div>
-    </section>
+        <div class="slides">
+            <img src="IMG/Banner_2.webp" alt="Slide 2">
+        </div>
+        <div class="slides">
+            <img src="IMG/Banner_3.webp" alt="Slide 3">
+        </div>
+    </div>
+
+    <div class="dots">
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+        <span class="dot" onclick="setSlide(3)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Tự động chuyển slide sau mỗi 3 giây
+        setInterval(() => {
+            changeSlide(1);
+        }, 2000);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function setSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</section>
+
 
     <!-- Categories Section -->
     <section class="categories">
         <div class="container">
             <h2>Danh mục nổi bật</h2>
             <div class="category-list">
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 1">
-                    <p>Sách Mới</p>
+                <a href="public/Layout/Manga.html">
+                    <div class="category-item"> 
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-06-2024/icon_ManngaT06.png" alt="Category 1">
+                        <p>Manga</p>
+                    </div>
+                </a>
+                <a href="public/Layout/VanHoc.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/240715/atomichabit100x100.jpg" alt="Category 2">
+                        <p>Văn Học</p>
+                    </div>
+                </a>
+                <a href="public/Layout/KinhDoanh.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/241003/kinhte-1.jpg" alt="Category 3">
+                        <p>Kinh Doanh</p>
+                    </div>
+                </a>
+                <a href="public/Layout/TieuThuyet.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/bup-sen-xanh-100x100.png" alt="Category 4">
+                        <p>Tiểu Thuyết</p>
+                    </div>
+                </a>
                 </div>
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 2">
-                    <p>HOT Trend</p>
-                </div>
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 3">
-                    <p>SALE</p>
-                </div>
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 4">
-                    <p>Khuyến Mãi</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -73,12 +130,12 @@
             <h2>Chương trình khuyến mãi</h2>
             <div class="promo-list">
                 <div class="promo-item">
-                    <img src="https://via.placeholder.com/600x300" alt="Promo 1">
-                    <p>Giảm 50% Sách Giáo Khoa</p>
+                    <img src="https://cdn0.fahasa.com/media/magentothem/banner7/DeliT12_840x320.jpg" alt="Promo 1">
+                    <p></p>
                 </div>
                 <div class="promo-item">
-                    <img src="https://via.placeholder.com/600x300" alt="Promo 2">
-                    <p>Mua 2 Tặng 1 Văn Phòng Phẩm</p>
+                    <img src="https://cdn0.fahasa.com/media/magentothem/banner7/TrangDCGS_0711_ResizeBanner_840x320.png" alt="Promo 2">
+                    <p></p>
                 </div>
             </div>
         </div>
