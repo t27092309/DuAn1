@@ -36,12 +36,12 @@
                 <a href="#" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
-                <a href="#" class="cart">
-                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                <a href="../client/view/auth/logout.php" class="cart">
+                    <i class="fas fa-shopping-cart"></i> Đăng xuất
                 </a>
-                <a href="?act=product-list">
+                <!-- <a href="?act=product-list">
                     <i></i>a
-                </a>
+                </a> -->
             </div>
         </div>
     </header>

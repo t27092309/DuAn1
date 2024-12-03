@@ -26,7 +26,7 @@ class AuthController
     {
         $result = $this->authQuery->handleLogin($account, $data);
         if($result['role'] === 1){
-            header('location: ../Source/admin/view/dashboard/index.php');
+            header('location: ../Source/admin/?act=product-list');
         } else {
             header('location: index.php');
         }
