@@ -3,9 +3,21 @@ include 'db_connection.php';
 session_start();
 $_SESSION['user_id'] = 1; // Thiết lập tạm ID người dùng
 
-// Lấy danh sách sản phẩm từ cơ sở dữ liệu
-$stmt = $pdo->query("SELECT * FROM product");
+// Số lượng sản phẩm trên mỗi trang
+$limit = 9;
+$page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
+
+// Truy vấn sản phẩm từ cơ sở dữ liệu với LIMIT và OFFSET
+$stmt = $pdo->prepare("SELECT * FROM product LIMIT :limit OFFSET :offset");
+$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Truy vấn tổng số sản phẩm để tính toán phân trang
+$totalProducts = $pdo->query("SELECT COUNT(*) FROM product")->fetchColumn();
+$totalPages = ceil($totalProducts / $limit);
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +30,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- CSS và thư viện -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="sanpham.css">
 </head>
@@ -56,6 +67,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </section>
+
     <!-- Product List -->
     <section class="product-list container py-5">
         <h2 class="text-center mb-5">Danh sách sản phẩm</h2>
@@ -68,8 +80,12 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             class="card-img-top">
                         <div class="card-body text-center">
                             <h5 class="card-title"><?php echo $product['title_product']; ?></h5>
-                            <p class="card-text text-danger fw-bold"><?php echo number_format($product['price_product']); ?>
-                                đ</p>
+                            <?php
+                            // Xử lý giá để loại bỏ dấu 'đ' và định dạng lại giá
+                            $price = str_replace(['đ', ','], '', $product['price_product']); // Loại bỏ dấu phân cách và "đ"
+                            $formattedPrice = number_format((float) $price); // Định dạng lại giá trị
+                            ?>
+                            <p class="card-text text-danger fw-bold"><?php echo $formattedPrice; ?> đ</p>
                             <form method="post" action="add_to_cart.php">
                                 <input type="hidden" name="product_id" value="<?php echo $product['id_product']; ?>">
                                 <input type="number" name="quantity" value="1" min="1" class="form-control mb-2">
@@ -79,6 +95,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             <?php endforeach; ?>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination text-center mt-5">
+            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                <a href="?page=<?php echo $i; ?>" class="btn btn-secondary"><?php echo $i; ?></a>
+            <?php endfor; ?>
         </div>
     </section>
 
