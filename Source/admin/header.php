@@ -11,15 +11,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="/node_modules/@splidejs/splide/dist/css/splide.min.css">
-    
 </head>
 
 <body>
     <!-- Header -->
-<header>
+    <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="#">FAHASA</a>
+                <a href="../index.php">FAHASA</a>
             </div>
             <nav class="menu">
                 <ul>
@@ -30,14 +29,18 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="./search.php">Tìm kiếm</a></button>
+                <button>Tìm kiếm</button>
             </div>
             <div class="header-actions">
-                <a href="admin/?act=product-list" class="account">
+
+                <a href="#" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
                 <a href="#" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                </a>
+                <a href="?act=product-list">
+                    <i></i>a
                 </a>
             </div>
         </div>
