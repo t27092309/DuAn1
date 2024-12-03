@@ -128,6 +128,29 @@ class ProductQuery
         }
     }
 
+//--------------------------------------------------------------ProductsInProductDetail
+    public function prosInProductDetail(){
+        try{
+            $sql = "SELECT * FROM product ORDER BY id_product DESC LIMIT 0,4";
+            $data = $this->pdo->query($sql)->fetchAll();
+            
+            foreach ($data as $value) {
+                $product = new Product();
+                $product->id_product = $value['id_product'];
+                $product->title_product = $value['title_product'];
+                $product->img_product = $value['img_product'];
+                $product->price_product = $value['price_product'];
+
+                $prosinProductDetail[] = $product;
+            }
+            return $prosinProductDetail;
+        } catch (Exception $error) {
+            echo "Pros error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+            }
+
     //---------------------------------------------------------Insert()----------------------------------------------
     public function insert(Product $product)
     {

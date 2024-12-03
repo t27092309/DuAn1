@@ -11,19 +11,19 @@
 
 <body>
     <div class="container">
-        <h3>Trang Tạo Mới Danh Mục</h3>
+        <h3>Trang Chỉnh sửa Danh Mục</h3>
         <a class="btn btn-primary" href="?act=product-list" role="button">Back</a>
 
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="title" class="form-label">Tên Danh mục: </label>
-                <input type="text" class="form-control" name="title_product" placeholder="VD: Văn học">
+                <input type="text" class="form-control" name="title_product" placeholder="VD: Văn phòng phẩm" value="<?= $category->title_category ?>">
             </div>
             <div class="mb-3">
                 <label for="img" class="form-label">Hình ảnh Danh mục: </label>
-                <input class="form-control" type="file" name="file_upload" multiple>
+                <input class="form-control" type="file" name="file_upload" multiple value="<?= $category->img_category ?>">
             </div>
-            <button type="submit" name="submitForm" class="btn btn-success">Tạo mới:</button>
+            <button type="submit" name="submitForm" class="btn btn-success">Lưu thay đổi</button>
         </form>
 
         <p style="color:red"><?= $tbLoi ?></p>

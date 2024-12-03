@@ -125,8 +125,9 @@
             <section class="fahasa-recommendations">
                 <h2>FAHASA GIỚI THIỆU</h2>
                 <div class="recommendations-grid">
+
                     <div class="product-card">
-                        <img src="./Image/recommend-1.png" alt="Product 1">
+                        <img src="<?= $pros->img_product ?>" alt="Product 1">
                         <h3>Hoa Học Trò - Số...</h3>
                         <p class="price"><span>19,000 đ</span> <del>20,000 đ</del></p>
                     </div>

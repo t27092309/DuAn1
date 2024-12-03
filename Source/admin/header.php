@@ -23,10 +23,8 @@
             <nav class="menu">
                 <ul>
                     <li><a href="../index.php">Trang chủ</a></li>
-                    <li><a href="#">Sách</a></li>
-                    <li><a href="#">Văn phòng phẩm</a></li>
-                    <li><a href="#">Đồ chơi</a></li>
-                    <li><a href="#">Khuyến mãi</a></li>
+                    <li><a href="?act=product-list">Sản phẩm</a></li>
+                    <li><a href="?act=category-list">Danh mục</a></li>
                 </ul>
             </nav>
             <div class="search-bar">

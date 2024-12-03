@@ -26,6 +26,11 @@ class ProductController
         include "view/client/SanPham.php";
     }
 
+    public function prosInProductDetail(){
+        $prosinDetail = $this->productQuery->prosInProductDetail();
+        include "/view/client/SanPham.php";
+    }
+
     public function showList()
     {
 

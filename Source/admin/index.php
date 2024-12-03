@@ -4,6 +4,9 @@ define("SITE_URL", "http://localhost/DuAn1/Source");
 include_once "controller/ProductController.php";
 include_once "model/Product.php";
 include_once "model/ProductQuery.php";
+include_once "controller/CategoryController.php";
+include_once "model/Category.php";
+include_once "model/CategoryQuery.php";
 
 include "./header.php";
 
@@ -48,17 +51,38 @@ if (isset($_GET["act"])) {
         case "product-detail":
             $proCtrl = new ProductController();
             $proCtrl->productDetail($id);
+            $proCtrl->prosInProductDetail();
             break;
 
         case "home":
             $proCtrl = new ProductController();
             $proCtrl->homeShowList();
             break;
-        // case "search":
-        //     $proCtrl = new ProductController();
-        //     $proCtrl->search();
-        //     break;
+            // case "search":
+            //     $proCtrl = new ProductController();
+            //     $proCtrl->search();
+            //     break;
 
+        case "category-list":
+            $cateCtrl = new CategoryController();
+            $cateCtrl->showListCategory();
+            break;
+
+        case "category-create":
+            $cateCtrl = new CategoryController();
+            $cateCtrl->showCreateCategory();
+            break;
+
+        case "category-update":
+            $cateCtrl = new CategoryController();
+            $cateCtrl->showUpdateCategory($id);
+            break;
+
+        case "category-delete":
+            $cateCtrl = new CategoryController();
+            $cateCtrl->showDeleteCategory($id);
+            break;
+            
         default:
             include "view/404.php";
             break;
