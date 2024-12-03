@@ -57,5 +57,8 @@
                 <?php endforeach ?>
             </tbody>
         </table>
+        <button type="button" class="btn btn-success">
+            <a href="?act=product-create" style="color: white; text-decoration: none;">Trang tạo mới</a>
+        </button>
 
     </div>

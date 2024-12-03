@@ -20,20 +20,35 @@
                     <th scope="col" style="width: 10px;"></th>
                     <th scope="col" style="width: 30px;">ID</th>
                     <th scope="col" style="width: 200px;">Title</th>
+                    <th scope="col" style="width: 200px;">Image</th>
+
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                <?php foreach ($productList as $product): ?>
+                <?php foreach ($categoryList as $category): ?>
                     <tr>
                         <td></td>
-                        <td><?= $product->id_product ?></td>
-                        <td><?= $product->title_product ?></td>
+                        <td><?= $category->id_category ?></td>
+                        <td><?= $category->title_category ?></td>
+                        <td>
+                            <div style="height: 100%; width: 100%;">
+                                <img style="width: 100%;" src="/DuAn1<?= $category->img_category ?>" alt="">
+                            </div>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning mb-1" style="width: 80px;">
+                                <a style="text-decoration: none; color: white;" href="?act=category-update&id=<?= $category->id_category ?>">Update</a>
+                            </button>
+                            <button type="button" class="btn btn-danger mb-1" style="width: 80px;">
+                                <a style="text-decoration: none; color: white;" href="?act=category-delete&id=<?= $category->id_category ?>" onclick="return confirm('Xóa nhá?????')">Delete</a>
+                            </button>
+                        </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
         <!-- Khu vực điều hướng -->
         <button type="button" class="btn btn-success">
-            <a href="?act=product-create" style="color: white; text-decoration: none;">Trang tạo mới</a>
+            <a href="?act=category-create" style="color: white; text-decoration: none;">Trang tạo mới danh mục</a>
         </button>
     </div>

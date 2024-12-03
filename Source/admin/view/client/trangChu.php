@@ -73,23 +73,31 @@
         <div class="container">
             <h2>Danh mục nổi bật</h2>
             <div class="category-list">
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 1">
-                    <p>Sách Mới</p>
+                <a href="public/Layout/Manga.html">
+                    <div class="category-item"> 
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-06-2024/icon_ManngaT06.png" alt="Category 1">
+                        <p>Manga</p>
+                    </div>
+                </a>
+                <a href="public/Layout/VanHoc.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/240715/atomichabit100x100.jpg" alt="Category 2">
+                        <p>Văn Học</p>
+                    </div>
+                </a>
+                <a href="public/Layout/KinhDoanh.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/241003/kinhte-1.jpg" alt="Category 3">
+                        <p>Kinh Doanh</p>
+                    </div>
+                </a>
+                <a href="public/Layout/TieuThuyet.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/bup-sen-xanh-100x100.png" alt="Category 4">
+                        <p>Tiểu Thuyết</p>
+                    </div>
+                </a>
                 </div>
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 2">
-                    <p>HOT Trend</p>
-                </div>
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 3">
-                    <p>SALE</p>
-                </div>
-                <div class="category-item">
-                    <img src="https://via.placeholder.com/200x200" alt="Category 4">
-                    <p>Khuyến Mãi</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -122,12 +130,12 @@
             <h2>Chương trình khuyến mãi</h2>
             <div class="promo-list">
                 <div class="promo-item">
-                    <img src="https://via.placeholder.com/600x300" alt="Promo 1">
-                    <p>Giảm 50% Sách Giáo Khoa</p>
+                    <img src="https://cdn0.fahasa.com/media/magentothem/banner7/DeliT12_840x320.jpg" alt="Promo 1">
+                    <p></p>
                 </div>
                 <div class="promo-item">
-                    <img src="https://via.placeholder.com/600x300" alt="Promo 2">
-                    <p>Mua 2 Tặng 1 Văn Phòng Phẩm</p>
+                    <img src="https://cdn0.fahasa.com/media/magentothem/banner7/TrangDCGS_0711_ResizeBanner_840x320.png" alt="Promo 2">
+                    <p></p>
                 </div>
             </div>
         </div>

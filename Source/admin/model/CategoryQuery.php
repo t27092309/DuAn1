@@ -1,5 +1,5 @@
 <?php
-class ProductQuery
+class CategoryQuery
 {
     public $pdo;
 
@@ -7,8 +7,8 @@ class ProductQuery
     {
         try {
             $this->pdo = new PDO("mysql:host=localhost; port=3306; dbname=duan1", "root", "");
-            echo "Connect database successfully";
-            echo "<hr>";
+            // echo "Connect database successfully";
+            // echo "<hr>";
         } catch (Exception $error) {
             echo "Connect database failed";
             echo "Error: " . $error->getMessage();
@@ -21,26 +21,22 @@ class ProductQuery
         $this->pdo = null;
     }
 
-    //---------------------------------------------------------All()----------------------------------------------
-    public function all()
+    //---------------------------------------------------------All()-----------------------------------------------
+    public function CategoryAll()
     {
         try {
             $sql = "SELECT * FROM category";
             $data = $this->pdo->query($sql)->fetchAll();
 
             foreach ($data as $value) {
-                $category = new Product();
-                $category->id_product = $value['id_product'];
-                $category->title_product = $value['title_product'];
-                $category->img_product = $value['img_product'];
-                $category->price_product = $value['price_product'];
-                $category->description_product = $value['description_product'];
+                $category = new Category();
                 $category->id_category = $value['id_category'];
-                $category->author_product = $value['author_product'];
+                $category->title_category = $value['title_category'];
+                $category->img_category = $value['img_category'];
 
-                $list[] = $category;
+                $cateList[] = $category;
             }
-            return $list;
+            return $cateList;
         } catch (Exception $error) {
             echo "Get all category error";
             echo "Error: " . $error->getMessage();
@@ -48,39 +44,36 @@ class ProductQuery
         }
     }
 
-    //---------------------------------------------------------Find()----------------------------------------------
-    public function find($id_product)
+    //----------------------------------------------------------Detail()---------------------------------------------------
+    public function detailCategory($id_category)
     {
         try {
-            $sql = "SELECT * FROM category WHERE id_product = $id_product";
+            $sql = "SELECT * FROM category WHERE id_category = $id_category";
             $data = $this->pdo->query($sql)->fetch();
 
             if ($data !== false) {
-                $category = new Product();
-                $category->id_product = $data['id_product'];
-                $category->title_product = $data['title_product'];
-                $category->img_product = $data['img_product'];
-                $category->price_product = $data['price_product'];
-                $category->description_product = $data['description_product'];
+                $category = new Category();
                 $category->id_category = $data['id_category'];
-                $category->author_product = $data['author_product'];
+                $category->title_category = $data['title_category'];
+                $category->img_category = $data['img_category'];
+
                 return $category;
             }
         } catch (Exception $error) {
-            echo "Get category error";
+            echo "Detail category error";
             echo "Error: " . $error->getMessage();
             echo "<hr>";
         }
     }
 
-    //---------------------------------------------------------Insert()----------------------------------------------
-    public function insert(Product $category)
+
+    //---------------------------------------------------------Insert()-------------------------------------------------
+    public function insertCategory(Category $category)
     {
         try {
-            $sql = "INSERT INTO category(title_product, img_product, price_product, description_product, id_category, author_product) VALUES('".$category->title_product."', '".$category->img_product."', '".$category->price_product."', '".$category->description_product."', '".$category->id_category."', '".$category->author_product."')";
+            $sql = "INSERT INTO category(title_category,img_category) VALUES('" . $category->title_category . "', '" . $category->img_category . "')";
             $data = $this->pdo->exec($sql);
-
-            if($data === 1){
+            if ($data === 1) {
                 return "success";
             }
         } catch (Exception $error) {
@@ -91,13 +84,13 @@ class ProductQuery
     }
 
     //---------------------------------------------------------Update()----------------------------------------------
-    public function update($id_product, Product $category)
+    public function updateCategory($id_category, Category $category)
     {
         try {
-            $sql = "UPDATE category SET title_product = '".$category->title_product."', img_product = '".$category->img_product."', price_product = '".$category->price_product."', description_product = '".$category->description_product."', id_category = '".$category->id_category."', author_product = '".$category->author_product."' WHERE id_product = $id_product";
+            $sql = "UPDATE category SET title_category = '" . $category->title_category . "', img_product = '" . $category->img_category . "'   WHERE id_product = $id_category";
             $data = $this->pdo->exec($sql);
 
-            if($data === 1 || $data === 0){
+            if ($data === 1 || $data === 0) {
                 return "success";
             }
         } catch (Exception $error) {
@@ -106,14 +99,15 @@ class ProductQuery
             echo "<hr>";
         }
     }
+
     //---------------------------------------------------------Delete()----------------------------------------------
-    public function delete($id_product)
+    public function deleteCategory($id_category)
     {
         try {
-            $sql = "DELETE FROM category WHERE id_product = $id_product ";
+            $sql = "DELETE FROM category WHERE id_category = $id_category ";
             $data = $this->pdo->exec($sql);
 
-            if($data === 1 ){
+            if ($data === 1) {
                 return "success";
             }
         } catch (Exception $error) {
