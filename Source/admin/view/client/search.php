@@ -1,4 +1,39 @@
- 
+<?php
+// Kết nối đến cơ sở dữ liệu
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "duan1"; // Tên cơ sở dữ liệu
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Kiểm tra kết nối
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Lấy từ khóa tìm kiếm
+$keyword = isset($_GET['query']) ? $_GET['query'] : '';
+
+// Truy vấn cơ sở dữ liệu
+$stmt = $conn->prepare("
+    SELECT 
+        product.id_product, 
+        product.title_product, 
+        product.img_product, 
+        product.price_product, 
+        product.description_product, 
+        category.name_category
+    FROM product 
+    LEFT JOIN category 
+    ON product.id_category = category.id_category
+    WHERE product.title_product LIKE ? OR product.description_product LIKE ?
+");
+$like_keyword = "%$keyword%";
+$stmt->bind_param("ss", $like_keyword, $like_keyword);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,19 +206,37 @@ main {
 }
 
 .SP1 {
-    margin: 10px;
     width: 200px;
-    height: 250px;
+    height: auto;
     background-color: white;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
+.SP1 img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
 .SP1:hover {
     transform: translateY(-5px);
     transition: all 0.3s ease;
+}
+.SP1 button {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.SP1 button:hover {
+    background-color: #d32f2f;
 }
 .account{
     width: 100px;
@@ -209,9 +262,11 @@ main {
                 </ul>
             </nav>
             <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="./search.php">Tìm kiếm</a></button>
-            </div>
+            <form action="search.php" method="GET">
+                <input type="text" name="query" placeholder="Tìm kiếm sản phẩm..." value="<?php echo htmlspecialchars($keyword); ?>">
+                <button type="submit">Tìm kiếm</button>
+            </form>
+        </div>
             <div class="header-actions">
                 <a href="admin/?act=product-list" class="account">
                     <i class="fas fa-user"></i> Tài khoản
@@ -223,6 +278,9 @@ main {
         </div>
     </header>
     <main>
+        
+
+
         <div class="list">
             <div class="h1">
                 <h1>Chọn phân loại sách </h1>
@@ -303,96 +361,25 @@ main {
             </div>
 
             <div class="SP">
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
+            <h2>Kết quả tìm kiếm cho: "<?php echo htmlspecialchars($keyword); ?>"</h2>
+        <div class="SP">
+            <?php if ($result->num_rows > 0): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <div class="SP1">
+                        <img src="/DuAn1<?php echo htmlspecialchars($row['img_product']); ?>" alt="<?php echo htmlspecialchars($row['title_product']); ?>">
+                        <h3><?php echo htmlspecialchars($row['title_product']); ?></h3>
+                        <p><strong>Giá:</strong> <?php echo number_format($row['price_product']); ?> VND</p>
+                        <button>Thêm vào giỏ</button>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <p>Không tìm thấy sản phẩm nào.</p>
+            <?php endif; ?>
         </div>
-    </main>
+    </div>
+</main>
 </body>
 </html>
+<?php
+$conn->close();
+?>
