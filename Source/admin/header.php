@@ -39,9 +39,9 @@
                 <a href="#" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
                 </a>
-                <a href="?act=product-list">
+                <!-- <a href="?act=product-list">
                     <i></i>a
-                </a>
+                </a> -->
             </div>
         </div>
     </header>
