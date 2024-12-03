@@ -36,8 +36,8 @@ $cartItems = getCartItems($userId);
                 <?php $totalAmount = 0; ?>
                 <?php foreach ($cartItems as $item): ?>
                     <tr>
-                        <td><img src="../img/<?php echo $item['img_product']; ?>" alt="<?php echo $item['title_product']; ?>"
-                                width="100"></td>
+                        <td><img src="img/<?php echo $product['img_product']; ?>" alt="<?php echo $product['title_product']; ?>"
+                                class="card-img-top"></td>
                         <td><?php echo $item['title_product']; ?></td>
                         <td><?php echo number_format($item['price_product']); ?> VNĐ</td>
                         <td>
