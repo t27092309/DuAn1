@@ -114,7 +114,7 @@ main {
 }
 
 .list {
-    width: 30%;
+    width: 23%;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -127,7 +127,7 @@ main {
 }
 
 .list ul li {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .list label {
@@ -171,7 +171,9 @@ main {
 }
 
 .SP1 {
-    width: calc(25% - 15px);
+    margin: 10px;
+    width: 200px;
+    height: 250px;
     background-color: white;
     border-radius: 8px;
     padding: 15px;
@@ -301,6 +303,8 @@ main {
             </div>
 
             <div class="SP">
+                <div class="SP1">                                      
+                </div>
                 <div class="SP1">                                      
                 </div>
                 <div class="SP1">                                      
