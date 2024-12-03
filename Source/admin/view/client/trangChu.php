@@ -73,23 +73,31 @@
         <div class="container">
             <h2>Danh mục nổi bật</h2>
             <div class="category-list">
-                <div class="category-item">
-                    <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-06-2024/icon_ManngaT06.png" alt="Category 1">
-                    <p>Manga</p>
+                <a href="public/Layout/Manga.html">
+                    <div class="category-item"> 
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-06-2024/icon_ManngaT06.png" alt="Category 1">
+                        <p>Manga</p>
+                    </div>
+                </a>
+                <a href="public/Layout/VanHoc.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/240715/atomichabit100x100.jpg" alt="Category 2">
+                        <p>Văn Học</p>
+                    </div>
+                </a>
+                <a href="public/Layout/KinhDoanh.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/241003/kinhte-1.jpg" alt="Category 3">
+                        <p>Kinh Doanh</p>
+                    </div>
+                </a>
+                <a href="public/Layout/TieuThuyet.html">
+                    <div class="category-item">
+                        <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/bup-sen-xanh-100x100.png" alt="Category 4">
+                        <p>Tiểu Thuyết</p>
+                    </div>
+                </a>
                 </div>
-                <div class="category-item">
-                    <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/240715/atomichabit100x100.jpg" alt="Category 2">
-                    <p>Văn Học</p>
-                </div>
-                <div class="category-item">
-                    <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/241003/kinhte-1.jpg" alt="Category 3">
-                    <p>Kinh Doanh</p>
-                </div>
-                <div class="category-item">
-                    <img src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/Danh-muc-san-pham/bup-sen-xanh-100x100.png" alt="Category 4">
-                    <p>Tiểu Thuyết</p>
-                </div>
-            </div>
         </div>
     </section>
 
