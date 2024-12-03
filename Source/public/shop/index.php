@@ -29,7 +29,8 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Banner -->
     <div class="banner my-4">
-        <img src="/img/TrangCTT10_1024_Flashsale_1920X400.png.png" alt="Flash Sale Banner" class="img-fluid rounded">
+        <img src="/shop/img//img/TrangCTT10_1024_Flashsale_1920X400.png.png" alt="Flash Sale Banner"
+            class="img-fluid rounded">
     </div>
 
     <!-- Flash Sale -->
