@@ -50,9 +50,9 @@
                 <a href="public/shop/cart.php" class="cart">
                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
                 </a>
-                <a href="admin/?act=product-list">
+                <!-- <a href="admin/?act=product-list">
                     <i></i>a
-                </a>
+                </a> -->
             </div>
         </div>
     </header>

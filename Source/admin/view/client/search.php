@@ -368,7 +368,7 @@ main {
                     <div class="SP1">
                         <img src="/DuAn1<?php echo htmlspecialchars($row['img_product']); ?>" alt="<?php echo htmlspecialchars($row['title_product']); ?>">
                         <h3><?php echo htmlspecialchars($row['title_product']); ?></h3>
-                        <p><strong>Giá:</strong> <?php echo number_format($row['price_product']); ?> VND</p>
+                        <p><strong>Giá:</strong> <?php echo htmlspecialchars($row['price_product']); ?> VND</p>
                         <button>Thêm vào giỏ</button>
                     </div>
                 <?php endwhile; ?>
