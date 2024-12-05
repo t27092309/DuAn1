@@ -12,6 +12,86 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="/node_modules/@splidejs/splide/dist/css/splide.min.css">
+    <style>
+        .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.banner img{
+    margin: 10px 0px 30px 0px;
+    width: 1490px;
+}
+/* Header */
+.header {
+    background-color: #f44336;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo a {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header .menu a:hover {
+    color: #ffc107;
+}
+
+.header .search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header .search-bar input {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .search-bar button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.header .search-bar button:hover {
+    background-color: #f44336;
+}
+    </style>
 </head>
 
 <body>
@@ -23,11 +103,11 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="#">Sách</a></li>
-                    <li><a href="#">Văn phòng phẩm</a></li>
+                    <li><a href="index.php">TRANG CHỦ</a></li>
+                    <li><a href="#">HOT</a></li>
+                    <li><a href="#">NEW BOOKS</a></li>
 
-                    <li><a href="public/shop/index.php">Khuyến mãi</a></li>
+                    <li><a href="public/shop/index.php">CATEGORY</a></li>
                 </ul>
             </nav>
             <div class="search-bar">

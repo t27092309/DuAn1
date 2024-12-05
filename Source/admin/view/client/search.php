@@ -65,82 +65,83 @@ a {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.banner img{
+    margin: 10px 0px 30px 0px;
+    width: 1490px;
 }
 /* Header */
-header {
+.header {
     background-color: #f44336;
-    color: white;
+    color: #fff;
     padding: 15px 0;
-    display: flex;
-    justify-content: center;
-}
-.logo{
-    width: 100px;
-}
-.logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-}
-.menu{
-    width: 500px;
-}
-.menu ul {
-    display: flex;
-    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.menu ul li a {
-    color: white;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo a {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header .menu a {
+    text-decoration: none;
+    color: #fff;
     font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.menu ul li a:hover {
-    color: #ffd700;
+.header .menu a:hover {
+    color: #ffc107;
 }
 
-.search-bar {
-    width: 300px;
+.header .search-bar {
     display: flex;
+    gap: 10px;
     align-items: center;
 }
 
-.search-bar input {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-
-.search-bar button {
-    background-color: #ffd700;
+.header .search-bar input {
+    padding: 8px 15px;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .search-bar button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-left: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.header-actions a {
-    color: white;
-    margin-left: 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
+.header .search-bar button:hover {
+    background-color: #f44336;
 }
-
-.header-actions a:hover {
-    color: #ffd700;
-}
-
 /* Main */
 main {
     display: flex;
@@ -248,13 +249,15 @@ main {
 </head>
 <body>
 <header>
+        <header class="header">
+        
         <div class="container">
             <div class="logo">
-                <a href="#">FAHASA</a>
+                <a href="../index.php">FAHASA</a>
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="?act=home">Trang chủ</a></li>
+                    <li><a href="../index.php">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
                     <li><a href="#">Đồ chơi</a></li>
@@ -277,6 +280,7 @@ main {
             </div>
         </div>
     </header>
+
     <main>
         
 

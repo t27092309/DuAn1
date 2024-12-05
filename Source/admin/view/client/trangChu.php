@@ -122,6 +122,26 @@
             </div>
         </div>
     </section>
+    <section class="featured-products">
+        <div class="container">
+            <h2>Siêu sale giá rẻ</h2>
+            <div class="product-list">
+                <?php 
+                foreach($homeProductList as $product):
+                ?>
+                <!-- Product Item -->
+                <div class="product-item" >
+                    <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
+                    <h3><?= $product->title_product ?></h3>
+                    <p class="price"><?= $product->price_product ?></p>
+                    <button>
+                        <a style="text-decoration: none; color: white" href="admin/?act=product-detail&id=<?= $product->id_product ?>" >Mua ngay</a>
+                    </button>
+                </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Promotions -->
