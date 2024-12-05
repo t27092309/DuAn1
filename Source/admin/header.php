@@ -29,7 +29,7 @@
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button>Tìm kiếm</button>
+                <button style="text-decoration: none; color: white" >Search</button>
             </div>
             <div class="header-actions">
 

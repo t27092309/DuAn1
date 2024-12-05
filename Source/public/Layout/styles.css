@@ -67,6 +67,7 @@ body {
 }
 
 .header .search-bar button {
+    width: 100px;
     background-color: #ffc107;
     color: #333;
     border: none;

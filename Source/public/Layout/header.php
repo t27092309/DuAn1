@@ -26,13 +26,13 @@
                     <li><a href="index.php">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
-                    <li><a href="#">Đồ chơi</a></li>
+
                     <li><a href="public/shop/index.php">Khuyến mãi</a></li>
                 </ul>
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="admin/view/client/search.php">Tìm kiếm</a></button>
+                <button> <a style="text-decoration: none; color: white" href="admin/view/client/search.php">Search</a></button>
             </div>
             <div class="header-actions">
 
