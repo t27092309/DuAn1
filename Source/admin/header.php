@@ -25,19 +25,20 @@
                     <li><a href="../index.php">Trang chủ</a></li>
                     <li><a href="?act=product-list">Sản phẩm</a></li>
                     <li><a href="?act=category-list">Danh mục</a></li>
+                    <li><a href="../public/Layout/oder.php">Đơn hàng</a></li>
                 </ul>
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button>Tìm kiếm</button>
+                <button style="text-decoration: none; color: white" >Search</button>
             </div>
             <div class="header-actions">
 
                 <a href="#" class="account">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
-                <a href="#" class="cart">
-                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                <a href="../client/view/auth/logout.php" class="cart">
+                    <i class="fas fa-shopping-cart"></i> Đăng xuất
                 </a>
                 <!-- <a href="?act=product-list">
                     <i></i>a

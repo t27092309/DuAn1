@@ -32,6 +32,7 @@
                 <div class="product2">
                         <div class="detail">
                             <h1 class="h1"><?= $product->title_product ?></h1>
+                            <h2 style="color: red;"><?= $product->price_product ?>đ</h2>
                             <div class="di">
                                 <div class="bulletin">
                                     Nhà cung cấp: <?= $product->supplier ?><br>

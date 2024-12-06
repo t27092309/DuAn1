@@ -112,6 +112,26 @@
                 <!-- Product Item -->
                 <div class="product-item" >
                     <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
+                    <h3><a style="text-decoration: none; color: black" href="admin/?act=product-detail&id=<?= $product->id_product ?>"><?= $product->title_product ?></a></h3>
+                    <p class="price"><?= $product->price_product ?>đ</p>
+                    <button>
+                        <a style="text-decoration: none; color: white" href="admin/?act=product-detail&id=<?= $product->id_product ?>" >Mua ngay</a>
+                    </button>
+                </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </section>
+    <section class="featured-products">
+        <div class="container">
+            <h2>Siêu sale giá rẻ</h2>
+            <div class="product-list">
+                <?php 
+                foreach($homeProductList as $product):
+                ?>
+                <!-- Product Item -->
+                <div class="product-item" >
+                    <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
                     <h3><?= $product->title_product ?></h3>
                     <p class="price"><?= $product->price_product ?></p>
                     <button>
@@ -152,21 +172,7 @@
                 <p style="color: #555;">Hotline: <a href="tel:0365295814" style="color: #007bff; text-decoration: none;">0365 295 814</a></p>
                 <p style="color: #555;">Email: <a href="mailto:support@fuhasa.com" style="color: #007bff; text-decoration: none;">support@fuhasa.com</a></p>
                 <div style="flex: 1 1 200px; margin-bottom: 20px;">
-                    <h4 style="margin-bottom: 10px; color: #333;">Theo dõi chúng tôi</h4>
-                    <div style="display: flex; gap: 10px;">
-                        <a href="#" style="text-decoration: none;">
-                            <img src="facebook-icon.png" alt="Facebook" style="width: 30px; height: 30px;">
-                        </a>
-                        <a href="#" style="text-decoration: none;">
-                            <img src="instagram-icon.png" alt="Instagram" style="width: 30px; height: 30px;">
-                        </a>
-                        <a href="#" style="text-decoration: none;">
-                            <img src="twitter-icon.png" alt="Twitter" style="width: 30px; height: 30px;">
-                        </a>
-                        <a href="#" style="text-decoration: none;">
-                            <img src="youtube-icon.png" alt="YouTube" style="width: 30px; height: 30px;">
-                        </a>
-                    </div>
+
                 </div>
             </div>
 

@@ -1,4 +1,39 @@
- 
+<?php
+// Kết nối đến cơ sở dữ liệu
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "duan1"; // Tên cơ sở dữ liệu
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Kiểm tra kết nối
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Lấy từ khóa tìm kiếm
+$keyword = isset($_GET['query']) ? $_GET['query'] : '';
+
+// Truy vấn cơ sở dữ liệu
+$stmt = $conn->prepare("
+    SELECT 
+        product.id_product, 
+        product.title_product, 
+        product.img_product, 
+        product.price_product, 
+        product.description_product, 
+        category.name_category
+    FROM product 
+    LEFT JOIN category 
+    ON product.id_category = category.id_category
+    WHERE product.title_product LIKE ? OR product.description_product LIKE ?
+");
+$like_keyword = "%$keyword%";
+$stmt->bind_param("ss", $like_keyword, $like_keyword);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,82 +65,83 @@ a {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.banner img{
+    margin: 10px 0px 30px 0px;
+    width: 1490px;
 }
 /* Header */
-header {
+.header {
     background-color: #f44336;
-    color: white;
+    color: #fff;
     padding: 15px 0;
-    display: flex;
-    justify-content: center;
-}
-.logo{
-    width: 100px;
-}
-.logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-}
-.menu{
-    width: 500px;
-}
-.menu ul {
-    display: flex;
-    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.menu ul li a {
-    color: white;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo a {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header .menu a {
+    text-decoration: none;
+    color: #fff;
     font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.menu ul li a:hover {
-    color: #ffd700;
+.header .menu a:hover {
+    color: #ffc107;
 }
 
-.search-bar {
-    width: 300px;
+.header .search-bar {
     display: flex;
+    gap: 10px;
     align-items: center;
 }
 
-.search-bar input {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-
-.search-bar button {
-    background-color: #ffd700;
+.header .search-bar input {
+    padding: 8px 15px;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .search-bar button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-left: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.header-actions a {
-    color: white;
-    margin-left: 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
+.header .search-bar button:hover {
+    background-color: #f44336;
 }
-
-.header-actions a:hover {
-    color: #ffd700;
-}
-
 /* Main */
 main {
     display: flex;
@@ -171,19 +207,37 @@ main {
 }
 
 .SP1 {
-    margin: 10px;
     width: 200px;
-    height: 250px;
+    height: auto;
     background-color: white;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
+.SP1 img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
 .SP1:hover {
     transform: translateY(-5px);
     transition: all 0.3s ease;
+}
+.SP1 button {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.SP1 button:hover {
+    background-color: #d32f2f;
 }
 .account{
     width: 100px;
@@ -195,13 +249,15 @@ main {
 </head>
 <body>
 <header>
+        <header class="header">
+        
         <div class="container">
             <div class="logo">
-                <a href="#">FAHASA</a>
+                <a href="../index.php">FAHASA</a>
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="?act=home">Trang chủ</a></li>
+                    <li><a href="../index.php">Trang chủ</a></li>
                     <li><a href="#">Sách</a></li>
                     <li><a href="#">Văn phòng phẩm</a></li>
                     <li><a href="#">Đồ chơi</a></li>
@@ -209,9 +265,11 @@ main {
                 </ul>
             </nav>
             <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button> <a href="./search.php">Tìm kiếm</a></button>
-            </div>
+            <form action="search.php" method="GET">
+                <input type="text" name="query" placeholder="Tìm kiếm sản phẩm..." value="<?php echo htmlspecialchars($keyword); ?>">
+                <button type="submit">Tìm kiếm</button>
+            </form>
+        </div>
             <div class="header-actions">
                 <a href="admin/?act=product-list" class="account">
                     <i class="fas fa-user"></i> Tài khoản
@@ -222,7 +280,11 @@ main {
             </div>
         </div>
     </header>
+
     <main>
+        
+
+
         <div class="list">
             <div class="h1">
                 <h1>Chọn phân loại sách </h1>
@@ -303,96 +365,25 @@ main {
             </div>
 
             <div class="SP">
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
-            <div class="SP">
-                <div class="SP1">
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-                <div class="SP1">                                      
-                </div>
-            </div>
+            <h2>Kết quả tìm kiếm cho: "<?php echo htmlspecialchars($keyword); ?>"</h2>
+        <div class="SP">
+            <?php if ($result->num_rows > 0): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <div class="SP1">
+                        <img src="/DuAn1<?php echo htmlspecialchars($row['img_product']); ?>" alt="<?php echo htmlspecialchars($row['title_product']); ?>">
+                        <h3><?php echo htmlspecialchars($row['title_product']); ?></h3>
+                        <p><strong>Giá:</strong> <?php echo htmlspecialchars($row['price_product']); ?> VND</p>
+                        <button>Thêm vào giỏ</button>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <p>Không tìm thấy sản phẩm nào.</p>
+            <?php endif; ?>
         </div>
-    </main>
+    </div>
+</main>
 </body>
 </html>
+<?php
+$conn->close();
+?>
