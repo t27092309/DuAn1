@@ -172,21 +172,7 @@
                 <p style="color: #555;">Hotline: <a href="tel:0365295814" style="color: #007bff; text-decoration: none;">0365 295 814</a></p>
                 <p style="color: #555;">Email: <a href="mailto:support@fuhasa.com" style="color: #007bff; text-decoration: none;">support@fuhasa.com</a></p>
                 <div style="flex: 1 1 200px; margin-bottom: 20px;">
-                    <h4 style="margin-bottom: 10px; color: #333;">Theo dõi chúng tôi</h4>
-                    <div style="display: flex; gap: 10px;">
-                        <a href="#" style="text-decoration: none;">
-                            <img src="facebook-icon.png" alt="Facebook" style="width: 30px; height: 30px;">
-                        </a>
-                        <a href="#" style="text-decoration: none;">
-                            <img src="instagram-icon.png" alt="Instagram" style="width: 30px; height: 30px;">
-                        </a>
-                        <a href="#" style="text-decoration: none;">
-                            <img src="twitter-icon.png" alt="Twitter" style="width: 30px; height: 30px;">
-                        </a>
-                        <a href="#" style="text-decoration: none;">
-                            <img src="youtube-icon.png" alt="YouTube" style="width: 30px; height: 30px;">
-                        </a>
-                    </div>
+
                 </div>
             </div>
 

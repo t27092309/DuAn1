@@ -25,7 +25,7 @@
                     <li><a href="../index.php">Trang chủ</a></li>
                     <li><a href="?act=product-list">Sản phẩm</a></li>
                     <li><a href="?act=category-list">Danh mục</a></li>
-                    <li><a href="?act=revenue">Doanh thu</a></li>
+                    <li><a href="../public/Layout/oder.php">Đơn hàng</a></li>
                 </ul>
             </nav>
             <div class="search-bar">

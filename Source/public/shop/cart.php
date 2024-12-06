@@ -36,7 +36,7 @@ $cartItems = getCartItems($userId);
                 <?php $totalAmount = 0; ?>
                 <?php foreach ($cartItems as $item): ?>
                     <tr>
-                        <td><img src="img/<?php echo $item['img_product']; ?>" alt="<?php echo $item['title_product']; ?>"
+                        <td><img src="/DuAn1<?php echo $item['img_product']; ?>" alt="<?php echo $item['title_product']; ?>"
                                 class="card-img-top"></td>
 
                         <td><?php echo $item['title_product']; ?></td>
