@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 21, 2024 at 02:29 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: Dec 06, 2024 at 04:21 PM
+-- Server version: 9.0.1
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -88,8 +88,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_product`, `title_product`, `img_product`, `price_product`, `description_product`, `id_category`, `author_product`) VALUES
-(3, 'Di Sản Hồ Chí Minh - Hành Trình Theo Chân Bác (Tái Bản 2021)', '/Source/IMG/Hành Trình Đi Theo Chân.webp', 98000, '', 1, 'Trần Đức Tuấn'),
-(4, '123', '/Source/IMG/Hành Trình Đi Theo Chân.webp', 123, '123', 1, '123');
+(4, '321234567890', '/Source/IMG/Hành Trình Đi Theo Chân.webp', 123, '123', 1, '123');
 
 -- --------------------------------------------------------
 
@@ -98,14 +97,28 @@ INSERT INTO `product` (`id_product`, `title_product`, `img_product`, `price_prod
 --
 
 CREATE TABLE `users` (
-  `id_user` int NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `id` int NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `email` varchar(50) NOT NULL,
-  `passwd` varchar(100) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `gender` int NOT NULL,
-  `phonenum` int NOT NULL
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `role` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `address`, `phone`, `description`, `role`) VALUES
+(3, 'admin', 'admin@gmail.com', '$2y$10$SMtr4XPfgLHja32XoCIQ1e.Q7B4RywgFc21sp/36/ax8PX9/wuR2G', NULL, NULL, '', 1),
+(5, 'rgfdgdf', 'erertrtrt@gmail.com', '$2y$10$p4DCJDTkIggUeRev6/spy.oc12RyW29mTCFt7Gykc270SjNf4FIiy', NULL, NULL, '', 0),
+(6, 'hoang123', 'hoangtvhph53463@gmail.com', '$2y$10$UymIdMdindyuXQBP5AszSOjzppqa.x6HNHyQEN7usaU8BYtImmtcG', NULL, NULL, '', 0),
+(7, 'admin', 'hoangtvhph53463@gmail.com', '$2y$10$GUssbOLB95elvr7UOjZ4guiVUFJkfwxKwBjDugO.I20ZiTpfPNdoO', NULL, NULL, '', 0),
+(8, 'hoagn', 'hoangtvhph53463@gmail.com', '$2y$10$BEANf7EAnkgUxMvO0rz32.YmW017ny2M7.d/UdLwSIe8pNsXsYo7u', NULL, NULL, '', 0),
+(9, 'hoagn', 'hoanghh@gmail.com', '$2y$10$73G1zyRrCaaEiapjsAsgaecBUTp9V1Wh2BvYPbO/DeFy4GCGVVh6.', NULL, NULL, '', 0),
+(11, 'user dep zai', 'user@gmail.com', '$2y$10$XGn.kMmPSJdXc2OwHMdz9.ChHXJa./c5rDCkIqcsnFRnj238eF8hy', '551/263/22 Lê Văn Khương', '0949652939', 'ghi chu', 0);
 
 --
 -- Indexes for dumped tables
@@ -124,6 +137,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id_product`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -138,6 +157,12 @@ ALTER TABLE `category`
 --
 ALTER TABLE `product`
   MODIFY `id_product` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

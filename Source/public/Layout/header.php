@@ -38,9 +38,15 @@
 
                 <?php
                 if (isset($_SESSION['user'])) {
-                    echo '<a href="index.php?act=logout" class="account">
-                                    <i class="fas fa-user"></i> ' . $_SESSION['user']['username'] . '
-                                </a>';
+                    echo '<div class="dropdown">
+                            <a href="#" class="account">
+                                <i class="fas fa-user"></i> '.$_SESSION["user"]["username"].'
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="index.php?act=profile">Thông tin cá nhân</a>
+                                <a href="index.php?act=logout">Đăng xuất</a>
+                            </div>
+                        </div>';
                 } else {
                     echo '<a href="index.php?act=login" class="account">
                                 <i class="fas fa-user"></i> Đăng nhập
