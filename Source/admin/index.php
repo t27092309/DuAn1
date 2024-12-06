@@ -7,6 +7,9 @@ include_once "model/ProductQuery.php";
 include_once "controller/CategoryController.php";
 include_once "model/Category.php";
 include_once "model/CategoryQuery.php";
+include_once "controller/OrdersController.php";
+include_once "model/Orders.php";
+include_once "model/OrdersQuery.php";
 
 include "./header.php";
 
@@ -58,10 +61,10 @@ if (isset($_GET["act"])) {
             $proCtrl = new ProductController();
             $proCtrl->homeShowList();
             break;
-            // case "search":
-            //     $proCtrl = new ProductController();
-            //     $proCtrl->search();
-            //     break;
+        case "revenue":
+            $orCtrl = new OrderController();
+            $orCtrl->calRevenue();
+            break;
 
         case "category-list":
             $cateCtrl = new CategoryController();
@@ -82,7 +85,7 @@ if (isset($_GET["act"])) {
             $cateCtrl = new CategoryController();
             $cateCtrl->showDeleteCategory($id);
             break;
-            
+
         default:
             include "view/404.php";
             break;

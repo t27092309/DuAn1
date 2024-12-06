@@ -112,8 +112,8 @@
                 <!-- Product Item -->
                 <div class="product-item" >
                     <img src="/DuAn1<?= $product->img_product ?>" alt="Product 1">
-                    <h3><?= $product->title_product ?></h3>
-                    <p class="price"><?= $product->price_product ?></p>
+                    <h3><a style="text-decoration: none; color: black" href="admin/?act=product-detail&id=<?= $product->id_product ?>"><?= $product->title_product ?></a></h3>
+                    <p class="price"><?= $product->price_product ?>đ</p>
                     <button>
                         <a style="text-decoration: none; color: white" href="admin/?act=product-detail&id=<?= $product->id_product ?>" >Mua ngay</a>
                     </button>
