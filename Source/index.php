@@ -50,6 +50,38 @@ if (isset($_GET['act'])) {
                 echo "Không có dữ liệu được gửi từ form.";
             }
             break;
+        case "profile":
+            if(isset($_SESSION['user'])){
+                $id = $_SESSION['user']['id'];
+                $authCtrl = new AuthController();
+                $authCtrl->profile($id);
+            } else {
+                echo "chưa đăng nhập";
+            }
+            break;
+        case "updateProfile":
+            if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+                $data = $_POST;
+                $authCtrl = new AuthController();
+                $authCtrl->updateProfile($data);
+            }
+            break;
+        case "changePassword":
+            if(isset($_SESSION['user'])){
+                $id = $_SESSION['user']['id'];
+                $authCtrl = new AuthController();
+                $authCtrl->changePass($id);
+            } else {
+                echo "chưa đăng nhập";
+            }
+            break;
+        case "handleChangePass":
+            if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+                $data = $_POST;
+                $authCtrl = new AuthController();
+                $authCtrl->handleChangePass($data);
+            }
+            break;
     }
 } else {
     $proCtrl = new ProductController();

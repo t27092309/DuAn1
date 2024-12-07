@@ -50,11 +50,48 @@ class Auth
         }
     }
 
-    public function getInfoAccount($data)
+    public function getInfoAccount($email)
     {
         try {
-            $sql = "SELECT username,email, password, role FROM users WHERE email = '" . $data['email'] . "'";
+            $sql = "SELECT * FROM users WHERE email = '" . $email . "'";
             return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $error) {
+            echo "Detail product error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
+
+    public function getProfile($id)
+    {
+        try {
+            $sql = "SELECT * FROM users WHERE id = '" . $id . "'";
+            return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $error) {
+            echo "Detail product error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
+
+    public function updateProfile($data)
+    {
+        try {
+            $sql = "UPDATE users SET username = '".$data['name']."', phone = '".$data['phone']."', email = '".$data['email']."', address = '".$data['address']."', description = '".$data['description']."' WHERE id = ".$data['id'];
+            return $this->pdo->exec($sql);
+        } catch (Exception $error) {
+            echo "Detail product error";
+            echo "Error: " . $error->getMessage();
+            echo "<hr>";
+        }
+    }
+
+    public function updatePass($data)
+    {
+        $hashedPassword = password_hash($data['password_new'], PASSWORD_BCRYPT);
+        try {
+            $sql = "UPDATE users SET password = '".$hashedPassword."' WHERE id = ".$data['id'];
+            return $this->pdo->exec($sql);
         } catch (Exception $error) {
             echo "Detail product error";
             echo "Error: " . $error->getMessage();
@@ -67,7 +104,7 @@ class Auth
         $email = $data['email'];
         $password = $data['password'];
 
-        $user = $this->getInfoAccount(['email' => $email]);
+        $user = $this->getInfoAccount($email);
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
