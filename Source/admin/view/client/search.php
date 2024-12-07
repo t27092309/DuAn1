@@ -266,7 +266,7 @@ main {
             </nav>
             <div class="search-bar">
             <form action="search.php" method="GET">
-                <input type="text" name="query" placeholder="Tìm kiếm sản phẩm..." value="<?php echo htmlspecialchars($keyword); ?>">
+                <input type="text" name="query" placeholder="Tìm kiếm sản phẩm..." value="<?php echo($keyword); ?>">
                 <button type="submit">Tìm kiếm</button>
             </form>
         </div>
@@ -365,14 +365,14 @@ main {
             </div>
 
             <div class="SP">
-            <h2>Kết quả tìm kiếm cho: "<?php echo htmlspecialchars($keyword); ?>"</h2>
+            <h2>Kết quả tìm kiếm cho: "<?php echo($keyword); ?>"</h2>
         <div class="SP">
             <?php if ($result->num_rows > 0): ?>
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <div class="SP1">
-                        <img src="/DuAn1<?php echo htmlspecialchars($row['img_product']); ?>" alt="<?php echo htmlspecialchars($row['title_product']); ?>">
-                        <h3><?php echo htmlspecialchars($row['title_product']); ?></h3>
-                        <p><strong>Giá:</strong> <?php echo htmlspecialchars($row['price_product']); ?> VND</p>
+                        <img src="/DuAn1<?php echo($row['img_product']); ?>" alt="<?php echo($row['title_product']); ?>">
+                        <h3><?php echo($row['title_product']); ?></h3>
+                        <p><strong>Giá:</strong> <?php echo($row['price_product']); ?> VND</p>
                         <button>Thêm vào giỏ</button>
                     </div>
                 <?php endwhile; ?>
